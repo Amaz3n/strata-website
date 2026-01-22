@@ -1,26 +1,262 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Strata Brand Colors - Primary */
+  --strata-deep-slate: #2C3E50; /* RGB: 44, 62, 80 */
+  --strata-sandstone: #D4B896; /* RGB: 212, 184, 150 */
+  --strata-terracotta: #C1714B; /* RGB: 193, 113, 75 */
+
+  /* Strata Brand Colors - Secondary */
+  --strata-sky-blue: #5B9BD5; /* RGB: 91, 155, 213 */
+  --strata-warm-white: #F5F3F0; /* RGB: 245, 243, 240 */
+  --strata-charcoal: #3D3D3D; /* RGB: 61, 61, 61 */
+
+  /* Derived colors for various uses */
+  --strata-primary: var(--strata-deep-slate);
+  --strata-primary-light: #3a4f63;
+  --strata-primary-dark: #1f2937;
+  --strata-accent: var(--strata-terracotta);
+  --strata-accent-light: #d4856a;
+  --strata-accent-dark: #a85f3d;
+  --background-alt: var(--strata-warm-white);
+  --foreground-muted: #6b7280;
+
+  /* shadcn variables mapped to Strata colors */
+  /* Sharp corners to match the app's design language */
+  --radius: 0;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--strata-deep-slate);
+  --card: #ffffff;
+  --card-foreground: var(--strata-deep-slate);
+  --popover: #ffffff;
+  --popover-foreground: var(--strata-deep-slate);
+  --primary: var(--strata-deep-slate);
+  --primary-foreground: #ffffff;
+  --secondary: var(--strata-warm-white);
+  --secondary-foreground: var(--strata-deep-slate);
+  --muted: var(--strata-warm-white);
+  --muted-foreground: #6b7280;
+  --accent: var(--strata-terracotta);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: var(--strata-sky-blue);
+  --chart-1: var(--strata-terracotta);
+  --chart-2: var(--strata-sandstone);
+  --chart-3: var(--strata-sky-blue);
+  --chart-4: var(--strata-deep-slate);
+  --chart-5: var(--strata-charcoal);
 }
 
 @theme inline {
+  /* Typography - Strata Brand Fonts */
+  --font-sans: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-dm-serif), Georgia, serif;
+
+  /* Strata brand colors */
+  --color-strata-deep-slate: var(--strata-deep-slate);
+  --color-strata-sandstone: var(--strata-sandstone);
+  --color-strata-terracotta: var(--strata-terracotta);
+  --color-strata-sky-blue: var(--strata-sky-blue);
+  --color-strata-warm-white: var(--strata-warm-white);
+  --color-strata-charcoal: var(--strata-charcoal);
+
+  /* Strata custom colors */
+  --color-strata-primary: var(--strata-primary);
+  --color-strata-primary-light: var(--strata-primary-light);
+  --color-strata-primary-dark: var(--strata-primary-dark);
+  --color-strata-accent: var(--strata-accent);
+  --color-strata-accent-light: var(--strata-accent-light);
+  --color-strata-accent-dark: var(--strata-accent-dark);
+  --color-background-alt: var(--background-alt);
+  --color-foreground-muted: var(--foreground-muted);
+
+  /* shadcn theme colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius scale */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography hierarchy per brand guidelines */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Body text */
+p, li, td, th {
+  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* For quotes and special text sections */
+blockquote, .quote-text {
+  font-family: var(--font-dm-serif), Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--foreground-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--strata-primary-light);
+}
+
+/* Selection */
+::selection {
+  background: var(--strata-accent);
+  color: var(--strata-primary);
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[data-loading="true"] {
+  opacity: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Noise texture for hero backgrounds */
+.noise-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Hero typography - large headlines per brand guidelines */
+.hero-headline {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+/* Eyebrow text style per brand guidelines */
+.eyebrow {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Quote/accent text style per brand guidelines */
+.accent-text {
+  font-family: var(--font-dm-serif), Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+/* Subtle glow effect for accent elements */
+.glow-accent {
+  box-shadow: 0 0 30px rgba(193, 113, 75, 0.15);
+}
+
+.glow-text {
+  text-shadow: 0 0 60px rgba(193, 113, 75, 0.25);
+}
+
+/* Smooth text rendering */
+.text-render-optimize {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* App mockup shadow */
+.app-mockup-shadow {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Mask reveal animation */
+@keyframes mask-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.mask-reveal {
+  animation: mask-reveal 1s ease-out forwards;
 }
