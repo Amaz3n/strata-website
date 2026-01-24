@@ -51,13 +51,11 @@ function AnimatedCounter({ value, suffix = "" }: { value: string; suffix?: strin
 
 // Timeline milestone component
 function TimelineMilestone({
-  year,
   title,
   description,
   index,
   isLast,
 }: {
-  year: string;
   title: string;
   description: string;
   index: number;
@@ -96,7 +94,6 @@ function TimelineMilestone({
 
       {/* Content */}
       <div className="pt-0.5">
-        <span className="text-strata-accent font-semibold text-sm tracking-wider">{year}</span>
         <h4 className="text-xl font-bold text-foreground mt-1 mb-2">{title}</h4>
         <p className="text-muted-foreground leading-relaxed">{description}</p>
       </div>
@@ -162,32 +159,27 @@ function ValueCard({
 
 const timelineData = [
   {
-    year: "THE BEGINNING",
     title: "Roots in the Trade",
     description:
-      "Agustin's family established their electrical contracting business in Southwest Florida, cultivating relationships with builders and developers throughout the region.",
+      "Our family established their electrical contracting business in Southwest Florida years ago, cultivating relationships with builders and developers throughout the region.",
   },
   {
-    year: "THE INSIGHT",
     title: "Pattern Recognition",
     description:
       "Working alongside builders revealed a consistent pattern: missed deadlines, informal change orders, inadequate organizational systems. The industry was underserved by existing tools.",
   },
   {
-    year: "THE PERSPECTIVE",
-    title: "Builder's View",
+    title: "Builder’s View",
     description:
-      "As a project manager for a residential builder, Agustin confirmed the local industry lacked software designed for the demands of high-end residential construction.",
+      "As a project manager for a residential builder, we confirmed the local industry lacked software designed for the demands of high-end residential construction.",
   },
   {
-    year: "THE PARTNERSHIP",
     title: "Complementary Expertise",
     description:
-      "Gabi's deep market knowledge and agency relationships across the construction sector, combined with Agustin's technical expertise, revealed an opportunity to create something better.",
+      "Our deep market knowledge and agency relationships across the construction sector, combined with our technical expertise, revealed an opportunity to create something better.",
   },
   {
-    year: "THE SOLUTION",
-    title: "Strata is Born",
+    title: "The Solution",
     description:
       "Comprehensive project management software designed specifically for the region's builders—priced fairly and engineered to address the actual challenges faced by Southwest Florida's residential construction professionals.",
   },
@@ -267,19 +259,14 @@ export default function AboutPage() {
             transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="max-w-3xl"
           >
-            {/* Eyebrow */}
-            <p className="eyebrow text-strata-accent text-sm mb-4">About Strata</p>
-
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
-              Born from{" "}
-              <span className="text-strata-accent">Experience.</span>
+              About Strata
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-              Software built by people who understand construction—designed for the
-              builders who shape Southwest Florida.
+              Software born from experience, built by people who understand builders’ needs.
             </p>
           </motion.div>
         </div>
@@ -299,39 +286,8 @@ export default function AboutPage() {
                   The Journey to Strata
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Strata was built by Agustin and Gabi Zenuto, a Naples-based team
-                  with deep roots in Southwest Florida&apos;s construction industry.
+                  Strata was built by a Naples-based team with deep roots in Southwest Florida’s construction industry. Our experience, from the trades to project management to marketing, revealed a truth the industry knew but no one addressed: existing tools weren’t built for the daily needs of residential construction.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Their combined experience—from the trades to project management to
-                  marketing—revealed a truth the industry knew but no one addressed:
-                  existing tools weren&apos;t built for residential construction.
-                </p>
-              </AnimatedSection>
-
-              {/* Founders card */}
-              <AnimatedSection delay={0.2} className="mt-12">
-                <div className="relative group" data-cursor-expand>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-strata-accent/20 to-strata-primary/20 -rotate-2 transition-transform duration-500 group-hover:rotate-0"
-                  />
-                  <div className="relative bg-gradient-to-br from-slate-50 to-slate-100 p-8">
-                    <div className="flex items-center gap-6">
-                      <div className="w-20 h-20 bg-strata-primary/10 flex items-center justify-center shrink-0">
-                        <Users className="w-10 h-10 text-strata-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground mb-1">
-                          Agustin & Gabi Zenuto
-                        </h3>
-                        <p className="text-muted-foreground flex items-center gap-2">
-                          <MapPin className="w-4 h-4" />
-                          Naples, Florida
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </AnimatedSection>
             </div>
 
@@ -340,7 +296,6 @@ export default function AboutPage() {
               {timelineData.map((milestone, index) => (
                 <TimelineMilestone
                   key={milestone.title}
-                  year={milestone.year}
                   title={milestone.title}
                   description={milestone.description}
                   index={index}
@@ -357,17 +312,21 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
-              { value: "SWFL", label: "Based & Focused" },
+              { value: "SWFL", label: "Based" },
               { value: "100", suffix: "%", label: "Residential Focus" },
-              { value: "1", label: "Complete Platform" },
+              { value: "Complete", label: "Complete Platform", isCheck: true },
               { value: "0", label: "External Tools Needed" },
             ].map((stat, index) => (
               <AnimatedSection key={stat.label} delay={index * 0.1} direction="up">
                 <div className="text-center">
-                  <p className="text-4xl md:text-5xl font-bold text-strata-accent mb-2">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  </p>
-                  <p className="text-white/60 text-sm tracking-wide">{stat.label}</p>
+                  <div className="text-4xl md:text-5xl font-bold text-strata-accent mb-2 flex justify-center items-center h-12">
+                    {stat.isCheck ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                    ) : (
+                        <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                    )}
+                  </div>
+                  <p className="text-white/60 text-sm tracking-wide">{stat.isCheck ? "Complete Platform" : stat.label}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -402,31 +361,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <AnimatedSection className="text-center">
-            <blockquote className="relative">
-              {/* Decorative quote marks */}
-              <span className="absolute -top-8 -left-4 text-8xl text-strata-accent/10 font-serif">
-                &ldquo;
-              </span>
-              <p className="quote-text text-2xl md:text-3xl lg:text-4xl text-foreground leading-relaxed mb-8">
-                The majority relied on platforms that were prohibitively expensive,
-                built for broader markets, and fundamentally misaligned with
-                Southwest Florida&apos;s distinctive real estate landscape.
-              </p>
-              <span className="absolute -bottom-16 -right-4 text-8xl text-strata-accent/10 font-serif">
-                &rdquo;
-              </span>
-            </blockquote>
-            <p className="text-muted-foreground mt-8">
-              This realization drove us to create something different.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 lg:py-32 bg-strata-primary relative overflow-hidden">
         {/* Background decoration */}
@@ -443,7 +377,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
           <AnimatedSection className="text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to build on principle?
+              Ready to start?
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
               See how Strata can bring clarity and control to your residential
@@ -453,7 +387,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <MagneticButton
                 href="/contact"
-                variant="primary"
+                variant="outline"
                 size="lg"
                 showArrow
                 magneticStrength={0.25}

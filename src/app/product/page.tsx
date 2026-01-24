@@ -415,12 +415,9 @@ export default function ProductPage() {
             transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="max-w-3xl"
           >
-            {/* Eyebrow */}
-            <p className="eyebrow text-strata-accent text-sm mb-4">The Platform</p>
-
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
-              Complete Control.{" "}
+              Complete Control.<br />
               <span className="text-strata-accent">Total Clarity.</span>
             </h1>
 
@@ -440,7 +437,6 @@ export default function ProductPage() {
       <section className="py-24 lg:py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="eyebrow text-strata-accent text-sm mb-4">The Process</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               One system. Every phase.
             </h2>
@@ -464,31 +460,12 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-strata-primary text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, index) => (
-              <AnimatedSection key={stat.label} delay={index * 0.1} direction="up">
-                <div className="text-center">
-                  <p className="text-4xl md:text-5xl font-bold text-strata-accent mb-2">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  </p>
-                  <p className="text-white/60 text-sm tracking-wide">{stat.label}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Features Section - Interactive Showcase */}
       <section id="features" className="py-24 lg:py-32 bg-background-alt">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="eyebrow text-strata-accent text-sm mb-4">Core Modules</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Everything you need. Nothing you don&apos;t.
+              Core Modules
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Eight integrated modules working together to eliminate the fragmentation
@@ -524,7 +501,6 @@ export default function ProductPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection direction="left">
-              <p className="eyebrow text-strata-accent text-sm mb-4">Purpose-Built</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Designed for how you actually work.
               </h2>
@@ -534,14 +510,14 @@ export default function ProductPage() {
                 This fragmentation creates gaps where information is lost, deadlines are
                 missed, and projects suffer.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Strata eliminates these gaps entirely. Every tool communicates with
                 every other tool. Changes propagate automatically. Your team always
                 works from the same source of truth.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <MagneticButton href="/contact" variant="primary" showArrow>
+                <MagneticButton href="/contact" variant="outline" showArrow>
                   Request Demo
                 </MagneticButton>
                 <MagneticButton href="/about" variant="outline">
@@ -565,29 +541,15 @@ export default function ProductPage() {
                   transition={{ duration: 6, repeat: Infinity }}
                 />
 
-                {/* App mockup */}
-                <div className="relative overflow-hidden shadow-2xl">
-                  <div className="bg-[#1c1c1c] p-3 flex items-center gap-3 border-b border-white/5">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-white/20" />
-                      <div className="w-3 h-3 rounded-full bg-white/20" />
-                      <div className="w-3 h-3 rounded-full bg-white/20" />
+                {/* App mockup placeholder */}
+                <div className="relative overflow-hidden shadow-2xl bg-white border border-slate-200 aspect-[16/10] flex items-center justify-center">
+                    <div className="text-center p-8">
+                        <div className="w-16 h-16 bg-strata-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Calendar className="w-8 h-8 text-strata-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">Gantt Schedule</h3>
+                        <p className="text-muted-foreground text-sm">Interactive Project Timeline Visualization</p>
                     </div>
-                    <div className="flex-1 mx-4">
-                      <div className="bg-white/5 h-6 max-w-sm mx-auto flex items-center justify-center">
-                        <span className="text-[11px] text-white/30 font-mono">
-                          app.stratapm.com
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-[#0f0f0f] aspect-[16/10] overflow-hidden">
-                    <img
-                      src="/strata-app.png"
-                      alt="Strata Platform Interface"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -670,19 +632,14 @@ export default function ProductPage() {
 
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
           <AnimatedSection className="text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
               See Strata in action.
             </h2>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10">
-              Understanding how Strata transforms project management requires seeing
-              the platform work with real construction scenarios. Schedule a
-              personalized demonstration.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <MagneticButton
                 href="/contact"
-                variant="primary"
+                variant="outline"
                 size="lg"
                 showArrow
                 magneticStrength={0.25}

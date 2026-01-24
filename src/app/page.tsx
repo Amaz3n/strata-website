@@ -113,11 +113,11 @@ export default function HomePage() {
           <div className="text-center mb-6">
             <h1 className="hero-headline text-render-optimize text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
               <SplitText delay={0.2} staggerChildren={0.04} animation="fadeUp">
-                Build on
+                One system.
               </SplitText>{" "}
               <span className="text-strata-accent">
                 <SplitText delay={0.6} staggerChildren={0.04} animation="fadeUp">
-                  Principle.
+                  Every phase.
                 </SplitText>
               </span>
             </h1>
@@ -128,19 +128,9 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl mx-auto text-center mb-4 leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-2xl mx-auto text-center mb-12 leading-relaxed"
           >
-            Project management software engineered for residential construction.
-          </motion.p>
-
-          {/* Supporting text */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="accent-text text-base md:text-lg text-white/50 max-w-xl mx-auto text-center mb-12"
-          >
-            From lead to warranty, every phase organized under one system.
+            Project management software for discerning Southwest Florida builders
           </motion.p>
 
           {/* CTA Buttons */}
@@ -152,7 +142,7 @@ export default function HomePage() {
           >
             <MagneticButton
               href="/contact"
-              variant="primary"
+              variant="outline"
               size="lg"
               showArrow
               magneticStrength={0.25}
@@ -251,7 +241,7 @@ export default function HomePage() {
                 <p>
                   Residential construction demands precision at every
                   level—from initial estimates through final inspections and
-                  beyond. Strata eliminates the fragmentation that undermines
+                  beyond. Strata eliminates the fragmentation undermining
                   project success. This is comprehensive project management
                   built specifically for builders and trades: sales pipeline
                   management, scheduling, estimating, documentation, client
@@ -274,7 +264,7 @@ export default function HomePage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.2} className="mt-10 text-center">
-              <Button href="/product" variant="secondary" showArrow>
+              <Button href="/product" variant="outline" showArrow>
                 Explore the Platform
               </Button>
             </AnimatedSection>
@@ -298,7 +288,7 @@ export default function HomePage() {
           <BentoGrid items={features} />
 
           <AnimatedSection delay={0.4} className="mt-12 text-center">
-            <Button href="/product" variant="primary" showArrow>
+            <Button href="/product" variant="outline" showArrow>
               See How It Works
             </Button>
           </AnimatedSection>
@@ -316,24 +306,22 @@ export default function HomePage() {
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Strata exists because residential construction in Southwest
-                  Florida demands software as discerning as the clients you
-                  serve. We&apos;ve witnessed talented builders struggle with
-                  fragmented systems—juggling multiple applications, losing
-                  critical information between platforms, watching projects
-                  suffer from inadequate tools.
+                  Florida demands software as elevated as the clients you
+                  serve. We&apos;ve witnessed seasoned builders struggle with
+                  costly, imperfect systems, juggling multiple applications,
+                  losing critical information between platforms and watching
+                  projects suffer from inadequate tools.
                 </p>
                 <p>
-                  The region&apos;s builders needed something better: a
-                  comprehensive solution built on the principles of how
-                  construction actually works.
+                  Local builders need something better: a comprehensive
+                  solution built on the reality of construction.
                 </p>
                 <p>
                   This isn&apos;t software adapted from other industries.
-                  It&apos;s a platform engineered specifically for the
-                  challenges you face daily—designed by people who understand
-                  that successful projects require more than task lists and
-                  spreadsheets. They require systems built on sound principles,
-                  proper organization, and complete integration.
+                  It&apos;s a platform engineered for the challenges you face
+                  daily, designed by a team which understands successful
+                  projects require proper organization, efficient workflow, and
+                  complete integration.
                 </p>
               </div>
               <div className="mt-8">
@@ -349,15 +337,12 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-strata-accent/10 to-strata-primary/10 transform rotate-2" />
 
                 {/* Image Placeholder */}
-                <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 aspect-[4/3] overflow-hidden flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-strata-primary/10 flex items-center justify-center">
-                      <Home className="w-12 h-12 text-strata-primary" />
-                    </div>
-                    <p className="text-muted-foreground">
-                      Southwest Florida Construction
-                    </p>
-                  </div>
+                <div className="relative bg-[#0f0f0f] aspect-[4/3] overflow-hidden flex items-center justify-center">
+                   <img
+                    src="/strata-app.png"
+                    alt="Construction Site"
+                    className="w-full h-full object-cover opacity-80"
+                  />
                 </div>
               </div>
             </AnimatedSection>
