@@ -44,12 +44,12 @@ export default function FeatureCard({
     >
       <Card
         className={cn(
-          "group h-full border-border hover:border-strata-accent/30",
-          "hover:shadow-xl hover:shadow-strata-accent/5 transition-all duration-300"
+          "group h-full border-border hover:border-arc-accent/30",
+          "hover:shadow-xl hover:shadow-arc-accent/5 transition-all duration-300"
         )}
       >
         <CardHeader>
-          <div className="w-12 h-12 rounded-xl bg-strata-primary flex items-center justify-center mb-2 group-hover:bg-strata-accent transition-colors duration-300">
+          <div className="w-12 h-12 rounded-xl bg-arc-primary flex items-center justify-center mb-2 group-hover:bg-arc-accent transition-colors duration-300">
             <Icon className="w-6 h-6 text-white" />
           </div>
           <CardTitle className="text-lg">{title}</CardTitle>

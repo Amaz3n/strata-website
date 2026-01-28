@@ -115,7 +115,7 @@ export default function HomePage() {
               <SplitText delay={0.2} staggerChildren={0.04} animation="fadeUp">
                 One system.
               </SplitText>{" "}
-              <span className="text-strata-accent">
+              <span className="text-arc-accent">
                 <SplitText delay={0.6} staggerChildren={0.04} animation="fadeUp">
                   Every phase.
                 </SplitText>
@@ -183,7 +183,7 @@ export default function HomePage() {
                   <div className="flex-1 mx-4">
                     <div className="bg-white/5 h-6 max-w-sm mx-auto flex items-center justify-center">
                       <span className="text-[11px] text-white/30 font-mono">
-                        app.stratapm.com
+                        app.arcpm.com
                       </span>
                     </div>
                   </div>
@@ -193,8 +193,8 @@ export default function HomePage() {
                 {/* App Screenshot */}
                 <div className="bg-[#0f0f0f] aspect-[16/9] overflow-hidden">
                   <img
-                    src="/strata-app.png"
-                    alt="Strata Platform Screenshot"
+                    src="/arc-app.png"
+                    alt="Arc Platform Screenshot"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -241,7 +241,7 @@ export default function HomePage() {
                 <p>
                   Residential construction demands precision at every
                   level—from initial estimates through final inspections and
-                  beyond. Strata eliminates the fragmentation undermining
+                  beyond. Arc eliminates the fragmentation undermining
                   project success. This is comprehensive project management
                   built specifically for builders and trades: sales pipeline
                   management, scheduling, estimating, documentation, client
@@ -257,7 +257,7 @@ export default function HomePage() {
                   Your field teams access critical tools directly from job
                   sites. Your clients engage through customized portals. Your
                   accounting syncs seamlessly with QuickBooks. Every element of
-                  the construction process finds its place within Strata&apos;s
+                  the construction process finds its place within Arc&apos;s
                   organized structure.
                 </p>
               </div>
@@ -305,7 +305,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Strata exists because residential construction in Southwest
+                  Arc exists because residential construction in Southwest
                   Florida demands software as elevated as the clients you
                   serve. We&apos;ve witnessed seasoned builders struggle with
                   costly, imperfect systems, juggling multiple applications,
@@ -334,12 +334,12 @@ export default function HomePage() {
             <AnimatedSection direction="right" delay={0.2}>
               <div className="relative">
                 {/* Decorative Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-strata-accent/10 to-strata-primary/10 transform rotate-2" />
+                <div className="absolute inset-0 bg-gradient-to-br from-arc-accent/10 to-arc-primary/10 transform rotate-2" />
 
                 {/* Image Placeholder */}
                 <div className="relative bg-[#0f0f0f] aspect-[4/3] overflow-hidden flex items-center justify-center">
                    <img
-                    src="/strata-app.png"
+                    src="/arc-app.png"
                     alt="Construction Site"
                     className="w-full h-full object-cover opacity-80"
                   />

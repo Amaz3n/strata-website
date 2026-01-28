@@ -39,8 +39,8 @@ export default function HeroBackground() {
 
   if (!mounted) {
     return (
-      <div className="absolute inset-0 bg-strata-primary">
-        <div className="absolute inset-0 bg-gradient-to-br from-strata-primary via-strata-primary-dark to-strata-primary" />
+      <div className="absolute inset-0 bg-arc-primary">
+        <div className="absolute inset-0 bg-gradient-to-br from-arc-primary via-arc-primary-dark to-arc-primary" />
       </div>
     );
   }
@@ -48,7 +48,7 @@ export default function HeroBackground() {
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden">
       {/* Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a2a3a] via-strata-primary to-[#1f3044]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a2a3a] via-arc-primary to-[#1f3044]" />
 
       {/* Animated gradient orbs */}
       <motion.div

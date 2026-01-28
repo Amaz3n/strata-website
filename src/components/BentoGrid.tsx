@@ -40,7 +40,7 @@ function BentoItem({
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={cn(
-        "group relative bg-white border border-strata-charcoal/10 p-6 transition-all duration-300 hover:border-strata-charcoal/20 hover:shadow-lg",
+        "group relative bg-white border border-arc-charcoal/10 p-6 transition-all duration-300 hover:border-arc-charcoal/20 hover:shadow-lg",
         isLarge && "md:col-span-2 md:row-span-2 p-8",
         isTall && "md:row-span-2",
         isWide && "md:col-span-2",
@@ -50,13 +50,13 @@ function BentoItem({
       {/* Icon */}
       <div
         className={cn(
-          "mb-4 inline-flex items-center justify-center bg-strata-primary/5 transition-colors duration-300 group-hover:bg-strata-primary/10",
+          "mb-4 inline-flex items-center justify-center bg-arc-primary/5 transition-colors duration-300 group-hover:bg-arc-primary/10",
           isLarge ? "w-14 h-14" : "w-11 h-11"
         )}
       >
         <Icon
           className={cn(
-            "text-strata-primary",
+            "text-arc-primary",
             isLarge ? "w-7 h-7" : "w-5 h-5"
           )}
         />
@@ -65,7 +65,7 @@ function BentoItem({
       {/* Content */}
       <h3
         className={cn(
-          "font-heading font-semibold text-strata-primary mb-2",
+          "font-heading font-semibold text-arc-primary mb-2",
           isLarge ? "text-xl md:text-2xl" : "text-base"
         )}
       >
@@ -81,7 +81,7 @@ function BentoItem({
       </p>
 
       {/* Hover accent line */}
-      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-strata-accent transition-all duration-300 group-hover:w-full" />
+      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-arc-accent transition-all duration-300 group-hover:w-full" />
     </motion.div>
   );
 }

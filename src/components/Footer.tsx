@@ -17,9 +17,9 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-strata-primary text-white overflow-hidden">
+    <footer className="relative bg-arc-primary text-white overflow-hidden">
       {/* Accent line at top */}
-      <div className="h-px bg-gradient-to-r from-transparent via-strata-accent to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-arc-accent to-transparent" />
 
       {/* Subtle grid pattern */}
       <div
@@ -76,7 +76,7 @@ export default function Footer() {
                 </p>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 bg-strata-accent text-strata-primary px-6 py-3 font-semibold transition-all duration-300 hover:bg-strata-accent-light hover:gap-4"
+                  className="group inline-flex items-center gap-3 bg-arc-accent text-arc-primary px-6 py-3 font-semibold transition-all duration-300 hover:bg-arc-accent-light hover:gap-4"
                 >
                   Schedule a Demo
                   <svg
@@ -116,7 +116,7 @@ export default function Footer() {
                     className="group relative text-sm text-white/60 hover:text-white transition-colors duration-300"
                   >
                     {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-strata-accent transition-all duration-300 group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-arc-accent transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </motion.div>
               ))}
@@ -136,7 +136,7 @@ export default function Footer() {
                 ))}
               </div>
               <span className="hidden md:inline text-white/20">·</span>
-              <p>&copy; {new Date().getFullYear()} Strata</p>
+              <p>&copy; {new Date().getFullYear()} Arc</p>
             </div>
           </div>
         </div>

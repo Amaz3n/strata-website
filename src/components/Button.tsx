@@ -22,11 +22,11 @@ export default function Button({
 }: ButtonProps) {
   const variantStyles = {
     primary:
-      "bg-strata-accent text-strata-primary hover:bg-strata-accent-light hover:shadow-lg hover:shadow-strata-accent/25",
+      "bg-arc-accent text-arc-primary hover:bg-arc-accent-light hover:shadow-lg hover:shadow-arc-accent/25",
     secondary:
-      "bg-strata-primary text-white hover:bg-strata-primary-light",
+      "bg-arc-primary text-white hover:bg-arc-primary-light",
     outline:
-      "border-2 border-strata-primary text-strata-primary bg-transparent hover:bg-strata-primary hover:text-white",
+      "border-2 border-arc-primary text-arc-primary bg-transparent hover:bg-arc-primary hover:text-white",
   };
 
   const sizeStyles = {

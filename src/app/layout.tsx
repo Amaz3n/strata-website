@@ -28,7 +28,7 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Strata | Project Management for Residential Construction",
+  title: "Arc | Project Management for Residential Construction",
   description:
     "Comprehensive project management software engineered for residential construction. From lead to warranty, every phase organized under one system.",
   keywords: [
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     "home builder",
     "construction software",
   ],
-  authors: [{ name: "Strata" }],
+  authors: [{ name: "Arc" }],
   openGraph: {
-    title: "Strata | Project Management for Residential Construction",
+    title: "Arc | Project Management for Residential Construction",
     description:
       "Comprehensive project management software engineered for residential construction.",
     type: "website",

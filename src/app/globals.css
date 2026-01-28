@@ -4,76 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Strata Brand Colors - Primary */
-  --strata-deep-slate: #2C3E50; /* RGB: 44, 62, 80 */
-  --strata-sandstone: #D4B896; /* RGB: 212, 184, 150 */
-  --strata-terracotta: #C1714B; /* RGB: 193, 113, 75 */
+  /* Arc Brand Colors - Primary */
+  --arc-deep-slate: #2C3E50; /* RGB: 44, 62, 80 */
+  --arc-sandstone: #D4B896; /* RGB: 212, 184, 150 */
+  --arc-terracotta: #C1714B; /* RGB: 193, 113, 75 */
 
-  /* Strata Brand Colors - Secondary */
-  --strata-sky-blue: #5B9BD5; /* RGB: 91, 155, 213 */
-  --strata-warm-white: #F5F3F0; /* RGB: 245, 243, 240 */
-  --strata-charcoal: #3D3D3D; /* RGB: 61, 61, 61 */
+  /* Arc Brand Colors - Secondary */
+  --arc-sky-blue: #5B9BD5; /* RGB: 91, 155, 213 */
+  --arc-warm-white: #F5F3F0; /* RGB: 245, 243, 240 */
+  --arc-charcoal: #3D3D3D; /* RGB: 61, 61, 61 */
 
   /* Derived colors for various uses */
-  --strata-primary: var(--strata-deep-slate);
-  --strata-primary-light: #3a4f63;
-  --strata-primary-dark: #1f2937;
-  --strata-accent: var(--strata-terracotta);
-  --strata-accent-light: #d4856a;
-  --strata-accent-dark: #a85f3d;
-  --background-alt: var(--strata-warm-white);
+  --arc-primary: var(--arc-deep-slate);
+  --arc-primary-light: #3a4f63;
+  --arc-primary-dark: #1f2937;
+  --arc-accent: var(--arc-terracotta);
+  --arc-accent-light: #d4856a;
+  --arc-accent-dark: #a85f3d;
+  --background-alt: var(--arc-warm-white);
   --foreground-muted: #6b7280;
 
-  /* shadcn variables mapped to Strata colors */
+  /* shadcn variables mapped to Arc colors */
   /* Sharp corners to match the app's design language */
   --radius: 0;
   --background: #ffffff;
-  --foreground: var(--strata-deep-slate);
+  --foreground: var(--arc-deep-slate);
   --card: #ffffff;
-  --card-foreground: var(--strata-deep-slate);
+  --card-foreground: var(--arc-deep-slate);
   --popover: #ffffff;
-  --popover-foreground: var(--strata-deep-slate);
-  --primary: var(--strata-deep-slate);
+  --popover-foreground: var(--arc-deep-slate);
+  --primary: var(--arc-deep-slate);
   --primary-foreground: #ffffff;
-  --secondary: var(--strata-warm-white);
-  --secondary-foreground: var(--strata-deep-slate);
-  --muted: var(--strata-warm-white);
+  --secondary: var(--arc-warm-white);
+  --secondary-foreground: var(--arc-deep-slate);
+  --muted: var(--arc-warm-white);
   --muted-foreground: #6b7280;
-  --accent: var(--strata-terracotta);
+  --accent: var(--arc-terracotta);
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: var(--strata-sky-blue);
-  --chart-1: var(--strata-terracotta);
-  --chart-2: var(--strata-sandstone);
-  --chart-3: var(--strata-sky-blue);
-  --chart-4: var(--strata-deep-slate);
-  --chart-5: var(--strata-charcoal);
+  --ring: var(--arc-sky-blue);
+  --chart-1: var(--arc-terracotta);
+  --chart-2: var(--arc-sandstone);
+  --chart-3: var(--arc-sky-blue);
+  --chart-4: var(--arc-deep-slate);
+  --chart-5: var(--arc-charcoal);
 }
 
 @theme inline {
-  /* Typography - Strata Brand Fonts */
+  /* Typography - Arc Brand Fonts */
   --font-sans: var(--font-poppins), system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-montserrat), system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-dm-serif), Georgia, serif;
 
-  /* Strata brand colors */
-  --color-strata-deep-slate: var(--strata-deep-slate);
-  --color-strata-sandstone: var(--strata-sandstone);
-  --color-strata-terracotta: var(--strata-terracotta);
-  --color-strata-sky-blue: var(--strata-sky-blue);
-  --color-strata-warm-white: var(--strata-warm-white);
-  --color-strata-charcoal: var(--strata-charcoal);
+  /* Arc brand colors */
+  --color-arc-deep-slate: var(--arc-deep-slate);
+  --color-arc-sandstone: var(--arc-sandstone);
+  --color-arc-terracotta: var(--arc-terracotta);
+  --color-arc-sky-blue: var(--arc-sky-blue);
+  --color-arc-warm-white: var(--arc-warm-white);
+  --color-arc-charcoal: var(--arc-charcoal);
 
-  /* Strata custom colors */
-  --color-strata-primary: var(--strata-primary);
-  --color-strata-primary-light: var(--strata-primary-light);
-  --color-strata-primary-dark: var(--strata-primary-dark);
-  --color-strata-accent: var(--strata-accent);
-  --color-strata-accent-light: var(--strata-accent-light);
-  --color-strata-accent-dark: var(--strata-accent-dark);
+  /* Arc custom colors */
+  --color-arc-primary: var(--arc-primary);
+  --color-arc-primary-light: var(--arc-primary-light);
+  --color-arc-primary-dark: var(--arc-primary-dark);
+  --color-arc-accent: var(--arc-accent);
+  --color-arc-accent-light: var(--arc-accent-light);
+  --color-arc-accent-dark: var(--arc-accent-dark);
   --color-background-alt: var(--background-alt);
   --color-foreground-muted: var(--foreground-muted);
 
@@ -159,13 +159,13 @@ blockquote, .quote-text {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--strata-primary-light);
+  background: var(--arc-primary-light);
 }
 
 /* Selection */
 ::selection {
-  background: var(--strata-accent);
-  color: var(--strata-primary);
+  background: var(--arc-accent);
+  color: var(--arc-primary);
 }
 
 /* Smooth image loading */
@@ -259,4 +259,115 @@ img[data-loading="true"] {
 
 .mask-reveal {
   animation: mask-reveal 1s ease-out forwards;
+}
+
+/* Hero typography enhancements */
+.hero-headline {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-headline .text-arc-accent {
+  background: linear-gradient(180deg, var(--arc-terracotta) 0%, rgba(193,113,75,0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer animation for CTAs */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Data stream animation */
+@keyframes data-stream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card for floating elements */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced mockup shadow for hero */
+.hero-mockup-shadow {
+  box-shadow:
+    0 60px 120px -20px rgba(0, 0, 0, 0.7),
+    0 40px 80px -20px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 80px rgba(193, 113, 75, 0.1);
 }

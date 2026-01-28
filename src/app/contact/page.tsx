@@ -55,7 +55,7 @@ export default function ContactPage() {
       <CustomCursor />
 
       {/* Hero Section - Elevated */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-strata-primary via-strata-primary to-strata-primary/95">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-arc-primary via-arc-primary to-arc-primary/95">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Subtle animated gradient orbs */}
@@ -103,7 +103,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
             <motion.p
-              className="text-strata-accent font-semibold mb-6 tracking-widest uppercase text-xs"
+              className="text-arc-accent font-semibold mb-6 tracking-widest uppercase text-xs"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -119,7 +119,7 @@ export default function ContactPage() {
             >
               Let's Build
               <br />
-              <span className="text-strata-accent">Something Exceptional.</span>
+              <span className="text-arc-accent">Something Exceptional.</span>
             </motion.h1>
 
             <motion.p
@@ -128,7 +128,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              We respond to every inquiry within one business day. Let's discuss how Strata can transform your project management.
+              We respond to every inquiry within one business day. Let's discuss how Arc can transform your project management.
             </motion.p>
           </motion.div>
         </div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-16 lg:py-20 bg-white border-b border-strata-charcoal/5">
+      <section className="py-16 lg:py-20 bg-white border-b border-arc-charcoal/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <TrustIndicator
@@ -182,8 +182,8 @@ export default function ContactPage() {
                   <ContactMethod
                     icon={Mail}
                     label="Email"
-                    value="hello@strata.build"
-                    href="mailto:hello@strata.build"
+                    value="hello@arc.build"
+                    href="mailto:hello@arc.build"
                   />
                   <ContactMethod
                     icon={Phone}
@@ -201,13 +201,13 @@ export default function ContactPage() {
 
                 {/* Response Time Note */}
                 <motion.div
-                  className="mt-12 p-4 bg-strata-accent/5 border border-strata-accent/20 rounded-lg"
+                  className="mt-12 p-4 bg-arc-accent/5 border border-arc-accent/20 rounded-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6 }}
                 >
-                  <p className="text-sm text-strata-accent font-medium">
+                  <p className="text-sm text-arc-accent font-medium">
                     ✓ All inquiries answered within one business day
                   </p>
                 </motion.div>
@@ -223,7 +223,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-strata-charcoal/[0.02] rounded-2xl p-12 md:p-16 shadow-lg"
+                  className="bg-arc-charcoal/[0.02] rounded-2xl p-12 md:p-16 shadow-lg"
                 >
                   <form onSubmit={handleSubmit} className="space-y-8">
                     {/* Name & Email Row */}
@@ -330,7 +330,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-strata-primary relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-arc-primary relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-10">
           <motion.div
@@ -350,10 +350,10 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to explore Strata?
+              Ready to explore Arc?
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              From initial questions to scheduled demonstrations, we're here to help you understand how Strata transforms residential construction project management.
+              From initial questions to scheduled demonstrations, we're here to help you understand how Arc transforms residential construction project management.
             </p>
 
             <motion.div
@@ -403,8 +403,8 @@ function TrustIndicator({
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="text-center"
     >
-      <div className="inline-flex items-center justify-center w-12 h-12 bg-strata-accent/10 rounded-full mb-4">
-        <Icon className="w-6 h-6 text-strata-accent" />
+      <div className="inline-flex items-center justify-center w-12 h-12 bg-arc-accent/10 rounded-full mb-4">
+        <Icon className="w-6 h-6 text-arc-accent" />
       </div>
       <h3 className="font-semibold text-foreground mb-1">{label}</h3>
       <p className="text-sm text-muted-foreground">{description}</p>
@@ -433,17 +433,17 @@ function ContactMethod({
       transition={{ duration: 0.6 }}
       className="flex items-start gap-4 group cursor-pointer"
     >
-      <div className="w-12 h-12 bg-strata-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-strata-accent/10 transition-colors duration-300">
-        <Icon className="w-5 h-5 text-strata-primary group-hover:text-strata-accent transition-colors duration-300" />
+      <div className="w-12 h-12 bg-arc-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-arc-accent/10 transition-colors duration-300">
+        <Icon className="w-5 h-5 text-arc-primary group-hover:text-arc-accent transition-colors duration-300" />
       </div>
       <div>
-        <p className="text-xs font-semibold text-strata-charcoal/60 uppercase tracking-wider mb-1">
+        <p className="text-xs font-semibold text-arc-charcoal/60 uppercase tracking-wider mb-1">
           {label}
         </p>
         {href ? (
           <a
             href={href}
-            className="text-lg font-semibold text-foreground hover:text-strata-accent transition-colors duration-300"
+            className="text-lg font-semibold text-foreground hover:text-arc-accent transition-colors duration-300"
           >
             {value}
           </a>
@@ -504,7 +504,7 @@ function FloatingLabelField({
         className="absolute left-4 top-4 origin-left pointer-events-none font-medium text-base"
       >
         {label}
-        {required && <span className="text-strata-accent ml-1">*</span>}
+        {required && <span className="text-arc-accent ml-1">*</span>}
       </motion.label>
 
       <Input
@@ -515,12 +515,12 @@ function FloatingLabelField({
         onFocus={onFocus}
         onBlur={onBlur}
         placeholder={isFocused ? placeholder : ""}
-        className="h-14 pt-6 pb-3 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-strata-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50"
+        className="h-14 pt-6 pb-3 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-arc-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50"
       />
 
       {/* Bottom border animation */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-0.5 bg-strata-accent rounded-full"
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-arc-accent rounded-full"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isFocused ? 1 : 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -572,7 +572,7 @@ function FloatingLabelTextarea({
         className="absolute left-4 top-4 origin-left pointer-events-none font-medium text-base z-10"
       >
         {label}
-        {required && <span className="text-strata-accent ml-1">*</span>}
+        {required && <span className="text-arc-accent ml-1">*</span>}
       </motion.label>
 
       <Textarea
@@ -582,12 +582,12 @@ function FloatingLabelTextarea({
         onFocus={onFocus}
         onBlur={onBlur}
         placeholder={isFocused ? placeholder : ""}
-        className="min-h-32 pt-8 pb-4 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-strata-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50 resize-none"
+        className="min-h-32 pt-8 pb-4 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-arc-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50 resize-none"
       />
 
       {/* Bottom border animation */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-0.5 bg-strata-accent rounded-full"
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-arc-accent rounded-full"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isFocused ? 1 : 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -639,7 +639,7 @@ function FloatingLabelSelect({
 
       <Select value={value} onValueChange={onValueChange}>
         <SelectTrigger
-          className="h-14 pt-6 pb-3 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-strata-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50"
+          className="h-14 pt-6 pb-3 px-4 bg-white border-1 border-gray-200 focus:border-gray-300 focus:border-b-2 focus:border-b-arc-accent rounded-lg transition-all duration-300 hover:bg-gray-50/50"
           onFocus={onFocus}
           onBlur={onBlur}
         >
@@ -650,7 +650,7 @@ function FloatingLabelSelect({
 
       {/* Bottom border animation */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-0.5 bg-strata-accent rounded-full"
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-arc-accent rounded-full"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isFocused ? 1 : 0 }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -708,7 +708,7 @@ function MagneticSubmitButton({
         disabled={disabled}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative w-full h-14 px-8 bg-gradient-to-r from-strata-accent to-strata-accent/90 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-strata-accent/40 disabled:opacity-50 disabled:cursor-not-allowed group"
+        className="relative w-full h-14 px-8 bg-gradient-to-r from-arc-accent to-arc-accent/90 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-arc-accent/40 disabled:opacity-50 disabled:cursor-not-allowed group"
       >
         {/* Animated background shine */}
         <span className="absolute inset-0 overflow-hidden">
@@ -747,9 +747,9 @@ function SuccessMessage() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2, type: "spring" }}
-        className="w-16 h-16 rounded-full bg-strata-accent/10 flex items-center justify-center mx-auto mb-6"
+        className="w-16 h-16 rounded-full bg-arc-accent/10 flex items-center justify-center mx-auto mb-6"
       >
-        <CheckCircle className="w-8 h-8 text-strata-accent" />
+        <CheckCircle className="w-8 h-8 text-arc-accent" />
       </motion.div>
       <h3 className="text-2xl font-bold text-foreground mb-3">
         Message Sent Successfully!

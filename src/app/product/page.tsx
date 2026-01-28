@@ -220,7 +220,7 @@ function FeatureCard({
         "group relative w-full text-left p-6 transition-all duration-500",
         "border bg-white",
         isSelected
-          ? "border-strata-accent shadow-xl shadow-strata-accent/10"
+          ? "border-arc-accent shadow-xl shadow-arc-accent/10"
           : "border-slate-200 hover:border-slate-300 hover:shadow-lg"
       )}
       data-cursor-expand
@@ -236,7 +236,7 @@ function FeatureCard({
 
       {/* Accent bar */}
       <motion.div
-        className="absolute left-0 top-0 bottom-0 w-1 bg-strata-accent"
+        className="absolute left-0 top-0 bottom-0 w-1 bg-arc-accent"
         initial={{ scaleY: 0 }}
         animate={{ scaleY: isSelected ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -247,15 +247,15 @@ function FeatureCard({
           <div
             className={cn(
               "w-12 h-12 flex items-center justify-center transition-colors duration-300",
-              isSelected ? "bg-strata-accent" : "bg-strata-primary/10 group-hover:bg-strata-primary/20"
+              isSelected ? "bg-arc-accent" : "bg-arc-primary/10 group-hover:bg-arc-primary/20"
             )}
           >
-            <Icon className={cn("w-6 h-6 transition-colors", isSelected ? "text-white" : "text-strata-primary")} />
+            <Icon className={cn("w-6 h-6 transition-colors", isSelected ? "text-white" : "text-arc-primary")} />
           </div>
           <ChevronRight
             className={cn(
               "w-5 h-5 transition-all duration-300",
-              isSelected ? "text-strata-accent rotate-90" : "text-slate-300 group-hover:text-slate-400"
+              isSelected ? "text-arc-accent rotate-90" : "text-slate-300 group-hover:text-slate-400"
             )}
           />
         </div>
@@ -282,12 +282,12 @@ function FeatureDetail({ feature }: { feature: typeof features[0] }) {
       <div className="sticky top-32">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 bg-strata-accent flex items-center justify-center">
+          <div className="w-16 h-16 bg-arc-accent flex items-center justify-center">
             <Icon className="w-8 h-8 text-white" />
           </div>
           <div>
             <h3 className="text-2xl font-bold text-foreground">{feature.title}</h3>
-            <p className="text-strata-accent font-medium">Core Module</p>
+            <p className="text-arc-accent font-medium">Core Module</p>
           </div>
         </div>
 
@@ -304,8 +304,8 @@ function FeatureDetail({ feature }: { feature: typeof features[0] }) {
               transition={{ delay: idx * 0.05 }}
               className="flex items-start gap-3"
             >
-              <div className="w-5 h-5 bg-strata-accent/10 flex items-center justify-center mt-0.5 flex-shrink-0">
-                <Check className="w-3 h-3 text-strata-accent" />
+              <div className="w-5 h-5 bg-arc-accent/10 flex items-center justify-center mt-0.5 flex-shrink-0">
+                <Check className="w-3 h-3 text-arc-accent" />
               </div>
               <span className="text-foreground">{bullet}</span>
             </motion.div>
@@ -342,7 +342,7 @@ function WorkflowStep({
       {index < total - 1 && (
         <div className="hidden md:block absolute top-8 left-[calc(50%+32px)] w-[calc(100%-64px)] h-[2px]">
           <motion.div
-            className="h-full bg-gradient-to-r from-strata-accent to-strata-accent/50"
+            className="h-full bg-gradient-to-r from-arc-accent to-arc-accent/50"
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
             transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
@@ -353,10 +353,10 @@ function WorkflowStep({
 
       {/* Icon */}
       <motion.div
-        className="w-16 h-16 bg-white border-2 border-strata-primary/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-strata-accent group-hover:shadow-lg group-hover:shadow-strata-accent/20"
+        className="w-16 h-16 bg-white border-2 border-arc-primary/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-arc-accent group-hover:shadow-lg group-hover:shadow-arc-accent/20"
         whileHover={{ scale: 1.05, rotate: 3 }}
       >
-        <Icon className="w-7 h-7 text-strata-primary transition-colors group-hover:text-strata-accent" />
+        <Icon className="w-7 h-7 text-arc-primary transition-colors group-hover:text-arc-accent" />
       </motion.div>
 
       {/* Label */}
@@ -375,7 +375,7 @@ export default function ProductPage() {
       <CustomCursor />
 
       {/* Page Header */}
-      <section className="relative pt-32 pb-12 bg-strata-primary overflow-hidden">
+      <section className="relative pt-32 pb-12 bg-arc-primary overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
           {/* Subtle gradient orbs */}
@@ -418,13 +418,13 @@ export default function ProductPage() {
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
               Complete Control.<br />
-              <span className="text-strata-accent">Total Clarity.</span>
+              <span className="text-arc-accent">Total Clarity.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
               Residential construction operates across multiple domains simultaneously.
-              Strata unifies them all into one powerful platform.
+              Arc unifies them all into one powerful platform.
             </p>
           </motion.div>
         </div>
@@ -441,7 +441,7 @@ export default function ProductPage() {
               One system. Every phase.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From first contact to ongoing maintenance, Strata guides your projects
+              From first contact to ongoing maintenance, Arc guides your projects
               through every milestone with precision.
             </p>
           </AnimatedSection>
@@ -511,7 +511,7 @@ export default function ProductPage() {
                 missed, and projects suffer.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Strata eliminates these gaps entirely. Every tool communicates with
+                Arc eliminates these gaps entirely. Every tool communicates with
                 every other tool. Changes propagate automatically. Your team always
                 works from the same source of truth.
               </p>
@@ -529,14 +529,14 @@ export default function ProductPage() {
             <AnimatedSection direction="right" delay={0.2}>
               <div className="relative" data-cursor-expand>
                 {/* Decorative elements */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-strata-accent/5 to-strata-primary/5 -z-10" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-arc-accent/5 to-arc-primary/5 -z-10" />
                 <motion.div
-                  className="absolute -top-8 -right-8 w-32 h-32 bg-strata-accent/10"
+                  className="absolute -top-8 -right-8 w-32 h-32 bg-arc-accent/10"
                   animate={{ rotate: [0, 5, 0] }}
                   transition={{ duration: 8, repeat: Infinity }}
                 />
                 <motion.div
-                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-strata-primary/10"
+                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-arc-primary/10"
                   animate={{ rotate: [0, -5, 0] }}
                   transition={{ duration: 6, repeat: Infinity }}
                 />
@@ -544,8 +544,8 @@ export default function ProductPage() {
                 {/* App mockup placeholder */}
                 <div className="relative overflow-hidden shadow-2xl bg-white border border-slate-200 aspect-[16/10] flex items-center justify-center">
                     <div className="text-center p-8">
-                        <div className="w-16 h-16 bg-strata-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Calendar className="w-8 h-8 text-strata-primary" />
+                        <div className="w-16 h-16 bg-arc-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <Calendar className="w-8 h-8 text-arc-primary" />
                         </div>
                         <h3 className="text-xl font-bold text-foreground mb-2">Gantt Schedule</h3>
                         <p className="text-muted-foreground text-sm">Interactive Project Timeline Visualization</p>
@@ -565,7 +565,7 @@ export default function ProductPage() {
               Beyond the basics.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Additional capabilities that set Strata apart from generic project
+              Additional capabilities that set Arc apart from generic project
               management tools.
             </p>
           </AnimatedSection>
@@ -595,11 +595,11 @@ export default function ProductPage() {
               return (
                 <AnimatedSection key={item.title} delay={index * 0.1}>
                   <div
-                    className="group bg-white p-8 border border-slate-200 transition-all duration-300 hover:border-strata-accent hover:shadow-lg h-full"
+                    className="group bg-white p-8 border border-slate-200 transition-all duration-300 hover:border-arc-accent hover:shadow-lg h-full"
                     data-cursor-expand
                   >
-                    <div className="w-14 h-14 bg-strata-primary/5 flex items-center justify-center mb-6 transition-colors group-hover:bg-strata-accent/10">
-                      <Icon className="w-7 h-7 text-strata-primary transition-colors group-hover:text-strata-accent" />
+                    <div className="w-14 h-14 bg-arc-primary/5 flex items-center justify-center mb-6 transition-colors group-hover:bg-arc-accent/10">
+                      <Icon className="w-7 h-7 text-arc-primary transition-colors group-hover:text-arc-accent" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{item.description}</p>
@@ -612,7 +612,7 @@ export default function ProductPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-strata-primary relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-arc-primary relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0">
           <div
@@ -633,7 +633,7 @@ export default function ProductPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
           <AnimatedSection className="text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
-              See Strata in action.
+              See Arc in action.
             </h2>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

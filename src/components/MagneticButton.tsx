@@ -50,9 +50,9 @@ export default function MagneticButton({
 
   const variantStyles = {
     primary:
-      "bg-strata-accent text-strata-primary hover:shadow-2xl hover:shadow-strata-accent/40",
+      "bg-arc-accent text-arc-primary hover:shadow-2xl hover:shadow-arc-accent/40",
     secondary:
-      "bg-strata-primary text-white hover:shadow-2xl hover:shadow-strata-primary/40",
+      "bg-arc-primary text-white hover:shadow-2xl hover:shadow-arc-primary/40",
     outline:
       "border-2 border-white/30 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/50",
   };

@@ -75,7 +75,7 @@ function TimelineMilestone({
       {/* Vertical line */}
       {!isLast && (
         <motion.div
-          className="absolute left-[11px] top-6 w-[2px] bg-gradient-to-b from-strata-accent to-strata-accent/20"
+          className="absolute left-[11px] top-6 w-[2px] bg-gradient-to-b from-arc-accent to-arc-accent/20"
           initial={{ height: 0 }}
           animate={isInView ? { height: "calc(100% - 24px)" } : {}}
           transition={{ duration: 0.8, delay: index * 0.15 + 0.3 }}
@@ -84,12 +84,12 @@ function TimelineMilestone({
 
       {/* Dot */}
       <motion.div
-        className="absolute left-0 top-1 w-6 h-6 bg-strata-primary border-2 border-strata-accent flex items-center justify-center"
+        className="absolute left-0 top-1 w-6 h-6 bg-arc-primary border-2 border-arc-accent flex items-center justify-center"
         initial={{ scale: 0 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.4, delay: index * 0.15 + 0.1, type: "spring" }}
       >
-        <div className="w-2 h-2 bg-strata-accent" />
+        <div className="w-2 h-2 bg-arc-accent" />
       </motion.div>
 
       {/* Content */}
@@ -135,7 +135,7 @@ function ValueCard({
     >
       {/* Accent border that reveals on hover */}
       <motion.div
-        className="absolute inset-x-0 top-0 h-1 bg-strata-accent origin-left"
+        className="absolute inset-x-0 top-0 h-1 bg-arc-accent origin-left"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isHovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
@@ -143,11 +143,11 @@ function ValueCard({
 
       {/* Icon */}
       <motion.div
-        className="w-14 h-14 bg-strata-primary/5 flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-strata-accent/10"
+        className="w-14 h-14 bg-arc-primary/5 flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-arc-accent/10"
         animate={{ rotate: isHovered ? 3 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Icon className="w-7 h-7 text-strata-primary transition-colors duration-300 group-hover:text-strata-accent" />
+        <Icon className="w-7 h-7 text-arc-primary transition-colors duration-300 group-hover:text-arc-accent" />
       </motion.div>
 
       {/* Content */}
@@ -219,7 +219,7 @@ export default function AboutPage() {
       <CustomCursor />
 
       {/* Page Header */}
-      <section className="relative pt-32 pb-40 bg-strata-primary overflow-hidden">
+      <section className="relative pt-32 pb-40 bg-arc-primary overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0">
           {/* Subtle gradient orbs */}
@@ -261,7 +261,7 @@ export default function AboutPage() {
           >
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
-              About Strata
+              About Arc
             </h1>
 
             {/* Subtitle */}
@@ -283,10 +283,10 @@ export default function AboutPage() {
             <div>
               <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  The Journey to Strata
+                  The Journey to Arc
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Strata was built by a Naples-based team with deep roots in Southwest Florida’s construction industry. Our experience, from the trades to project management to marketing, revealed a truth the industry knew but no one addressed: existing tools weren’t built for the daily needs of residential construction.
+                  Arc was built by a Naples-based team with deep roots in Southwest Florida’s construction industry. Our experience, from the trades to project management to marketing, revealed a truth the industry knew but no one addressed: existing tools weren’t built for the daily needs of residential construction.
                 </p>
               </AnimatedSection>
             </div>
@@ -308,7 +308,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-strata-primary text-white overflow-hidden">
+      <section className="py-20 bg-arc-primary text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {[
@@ -319,7 +319,7 @@ export default function AboutPage() {
             ].map((stat, index) => (
               <AnimatedSection key={stat.label} delay={index * 0.1} direction="up">
                 <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-strata-accent mb-2 flex justify-center items-center h-12">
+                  <div className="text-4xl md:text-5xl font-bold text-arc-accent mb-2 flex justify-center items-center h-12">
                     {stat.isCheck ? (
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
                     ) : (
@@ -362,7 +362,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-strata-primary relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-arc-primary relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -380,7 +380,7 @@ export default function AboutPage() {
               Ready to start?
             </h2>
             <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              See how Strata can bring clarity and control to your residential
+              See how Arc can bring clarity and control to your residential
               construction projects.
             </p>
 

@@ -48,7 +48,7 @@ export default function Navigation() {
       >
         {/* Scroll Progress Indicator */}
         <motion.div
-          className="absolute bottom-0 left-0 h-[2px] bg-strata-accent"
+          className="absolute bottom-0 left-0 h-[2px] bg-arc-accent"
           style={{ width: progressWidth }}
         />
 
@@ -62,7 +62,7 @@ export default function Navigation() {
               <span
                 className={cn(
                   "text-xl font-bold tracking-tight transition-all duration-300 group-hover:opacity-70",
-                  isScrolled ? "text-strata-primary" : "text-white"
+                  isScrolled ? "text-arc-primary" : "text-white"
                 )}
               >
                 STRATA
@@ -81,8 +81,8 @@ export default function Navigation() {
                       "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
                       isScrolled
                         ? isActive
-                          ? "text-strata-primary"
-                          : "text-strata-charcoal/70 hover:text-strata-primary"
+                          ? "text-arc-primary"
+                          : "text-arc-charcoal/70 hover:text-arc-primary"
                         : isActive
                           ? "text-white"
                           : "text-white/70 hover:text-white"
@@ -92,7 +92,7 @@ export default function Navigation() {
                     {/* Animated underline */}
                     <span
                       className={cn(
-                        "absolute bottom-1 left-4 right-4 h-[2px] bg-strata-accent transition-transform duration-300 origin-left",
+                        "absolute bottom-1 left-4 right-4 h-[2px] bg-arc-accent transition-transform duration-300 origin-left",
                         isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                       )}
                     />
@@ -103,7 +103,7 @@ export default function Navigation() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="group relative ml-4 px-5 py-2.5 text-sm font-semibold overflow-hidden bg-strata-accent text-strata-primary transition-all duration-300 hover:shadow-lg hover:shadow-strata-accent/20"
+                className="group relative ml-4 px-5 py-2.5 text-sm font-semibold overflow-hidden bg-arc-accent text-arc-primary transition-all duration-300 hover:shadow-lg hover:shadow-arc-accent/20"
               >
                 {/* Shine effect */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
@@ -117,7 +117,7 @@ export default function Navigation() {
               className={cn(
                 "md:hidden p-2 transition-colors duration-300",
                 isScrolled
-                  ? "text-strata-primary hover:bg-strata-primary/5"
+                  ? "text-arc-primary hover:bg-arc-primary/5"
                   : "text-white hover:bg-white/10"
               )}
               aria-label="Toggle menu"
@@ -157,12 +157,12 @@ export default function Navigation() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-black/5">
-                  <span className="text-xl font-bold tracking-tight text-strata-primary">
+                  <span className="text-xl font-bold tracking-tight text-arc-primary">
                     STRATA
                   </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-strata-primary hover:bg-strata-primary/5 transition-colors"
+                    className="p-2 text-arc-primary hover:bg-arc-primary/5 transition-colors"
                     aria-label="Close menu"
                   >
                     <X className="w-5 h-5" />
@@ -187,8 +187,8 @@ export default function Navigation() {
                             className={cn(
                               "block px-4 py-3 text-base font-medium transition-colors",
                               isActive
-                                ? "text-strata-primary bg-strata-primary/5"
-                                : "text-strata-charcoal/70 hover:text-strata-primary hover:bg-strata-primary/5"
+                                ? "text-arc-primary bg-arc-primary/5"
+                                : "text-arc-charcoal/70 hover:text-arc-primary hover:bg-arc-primary/5"
                             )}
                           >
                             {link.label}
@@ -209,7 +209,7 @@ export default function Navigation() {
                     <Link
                       href="/contact"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block w-full text-center px-6 py-3 bg-strata-accent text-strata-primary font-semibold transition-colors hover:bg-strata-accent-light"
+                      className="block w-full text-center px-6 py-3 bg-arc-accent text-arc-primary font-semibold transition-colors hover:bg-arc-accent-light"
                     >
                       Schedule Demo
                     </Link>
