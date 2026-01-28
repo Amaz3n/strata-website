@@ -58,7 +58,7 @@ export default function Footer() {
                   className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none"
                 >
                   <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                    STRATA
+                    ARC
                   </span>
                 </motion.h2>
               </div>

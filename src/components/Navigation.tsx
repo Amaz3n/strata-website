@@ -53,11 +53,11 @@ export default function Navigation() {
         />
 
         <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+          <div className="relative flex items-center justify-between h-20">
+            {/* Logo - Left */}
             <Link
               href="/"
-              className="group relative flex items-center"
+              className="group relative flex items-center z-10"
             >
               <span
                 className={cn(
@@ -65,12 +65,12 @@ export default function Navigation() {
                   isScrolled ? "text-arc-primary" : "text-white"
                 )}
               >
-                STRATA
+                ARC
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -99,17 +99,22 @@ export default function Navigation() {
                   </Link>
                 );
               })}
-
-              {/* CTA Button */}
-              <Link
-                href="/contact"
-                className="group relative ml-4 px-5 py-2.5 text-sm font-semibold overflow-hidden bg-arc-accent text-arc-primary transition-all duration-300 hover:shadow-lg hover:shadow-arc-accent/20"
-              >
-                {/* Shine effect */}
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-                <span className="relative">Schedule Demo</span>
-              </Link>
             </div>
+
+            {/* Sign In Button - Right (Desktop) */}
+            <a
+              href="https://app.arcnaples.com"
+              className={cn(
+                "group hidden md:inline-flex relative px-5 py-2.5 text-sm font-medium z-10 overflow-hidden transition-all duration-300",
+                isScrolled
+                  ? "bg-black/5 text-arc-charcoal/70 hover:bg-black/10 hover:text-arc-primary"
+                  : "bg-white/10 text-white/80 hover:bg-white/15 hover:text-white"
+              )}
+            >
+              {/* Subtle shimmer on hover */}
+              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              <span className="relative">Sign In</span>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -158,7 +163,7 @@ export default function Navigation() {
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-black/5">
                   <span className="text-xl font-bold tracking-tight text-arc-primary">
-                    STRATA
+                    ARC
                   </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -199,20 +204,20 @@ export default function Navigation() {
                   </div>
                 </nav>
 
-                {/* CTA */}
+                {/* Sign In */}
                 <div className="p-6 border-t border-black/5">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <Link
-                      href="/contact"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block w-full text-center px-6 py-3 bg-arc-accent text-arc-primary font-semibold transition-colors hover:bg-arc-accent-light"
+                    <a
+                      href="https://app.arcnaples.com"
+                      className="group relative block w-full text-center px-6 py-3 bg-black/5 text-arc-charcoal/70 font-medium overflow-hidden transition-all duration-300 hover:bg-black/10 hover:text-arc-primary"
                     >
-                      Schedule Demo
-                    </Link>
+                      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                      <span className="relative">Sign In</span>
+                    </a>
                   </motion.div>
                 </div>
               </div>
