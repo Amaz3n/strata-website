@@ -41,7 +41,7 @@ function BentoItem({
       }}
       className={cn(
         "group relative bg-white border border-arc-charcoal/10 p-6 transition-all duration-300 hover:border-arc-charcoal/20 hover:shadow-lg",
-        isLarge && "md:col-span-2 md:row-span-2 p-8",
+        isLarge && "md:col-span-2 md:row-span-2 p-8 flex flex-col",
         isTall && "md:row-span-2",
         isWide && "md:col-span-2",
         className
@@ -74,11 +74,24 @@ function BentoItem({
       <p
         className={cn(
           "text-muted-foreground leading-relaxed",
-          isLarge ? "text-base" : "text-sm"
+          isLarge ? "text-base mb-6" : "text-sm"
         )}
       >
         {description}
       </p>
+
+      {/* Visual element for large tiles */}
+      {isLarge && (
+        <div className="mt-auto pt-4 flex-1 flex items-end">
+          <div className="w-full h-32 md:h-48 bg-gradient-to-br from-arc-primary/5 to-arc-accent/10 flex items-center justify-center overflow-hidden">
+            <img
+              src="/arc-app.png"
+              alt="Arc Dashboard Preview"
+              className="w-full h-full object-cover opacity-90"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Hover accent line */}
       <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-arc-accent transition-all duration-300 group-hover:w-full" />

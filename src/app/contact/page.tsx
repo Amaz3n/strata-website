@@ -4,7 +4,6 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import MagneticButton from "@/components/MagneticButton";
-import CustomCursor from "@/components/CustomCursor";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -51,9 +50,6 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <CustomCursor />
-
       {/* Hero Section - Elevated */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-arc-primary via-arc-primary to-arc-primary/95">
         {/* Animated Background Elements */}
@@ -102,34 +98,14 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <motion.p
-              className="text-arc-accent font-semibold mb-6 tracking-widest uppercase text-xs"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              Let&apos;s Connect
-            </motion.p>
-
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
             >
-              Let's Build
-              <br />
-              <span className="text-arc-accent">Something Exceptional.</span>
+              Let&apos;s <span className="text-arc-accent">connect.</span>
             </motion.h1>
-
-            <motion.p
-              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              We respond to every inquiry within one business day. Let's discuss how Arc can transform your project management.
-            </motion.p>
           </motion.div>
         </div>
 
@@ -329,52 +305,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-arc-primary relative overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute inset-0 opacity-10">
-          <motion.div
-            className="absolute w-[600px] h-[600px] rounded-full"
-            style={{
-              background: "radial-gradient(circle, rgba(193,113,75,0.4) 0%, transparent 70%)",
-              right: "10%",
-              top: "20%",
-            }}
-            animate={{
-              y: [0, 50, 0],
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Ready to explore Arc?
-            </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10">
-              From initial questions to scheduled demonstrations, we're here to help you understand how Arc transforms residential construction project management.
-            </p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <MagneticButton
-                href="/product"
-                variant="outline"
-                size="lg"
-                magneticStrength={0.25}
-              >
-                Explore Platform
-              </MagneticButton>
-            </motion.div>
-          </AnimatedSection>
-        </div>
-      </section>
     </>
   );
 }

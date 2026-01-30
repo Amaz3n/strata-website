@@ -4,7 +4,6 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import MagneticButton from "@/components/MagneticButton";
-import CustomCursor from "@/components/CustomCursor";
 import {
   LayoutDashboard,
   DollarSign,
@@ -287,7 +286,6 @@ function FeatureDetail({ feature }: { feature: typeof features[0] }) {
           </div>
           <div>
             <h3 className="text-2xl font-bold text-foreground">{feature.title}</h3>
-            <p className="text-arc-accent font-medium">Core Module</p>
           </div>
         </div>
 
@@ -316,7 +314,7 @@ function FeatureDetail({ feature }: { feature: typeof features[0] }) {
   );
 }
 
-// Workflow step component
+// Workflow step component with enhanced scroll animation
 function WorkflowStep({
   step,
   index,
@@ -328,14 +326,18 @@ function WorkflowStep({
 }) {
   const Icon = step.icon;
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 40, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.15,
+        ease: [0.21, 0.47, 0.32, 0.98]
+      }}
       className="flex flex-col items-center relative group"
     >
       {/* Connector line */}
@@ -345,23 +347,50 @@ function WorkflowStep({
             className="h-full bg-gradient-to-r from-arc-accent to-arc-accent/50"
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
+            transition={{ duration: 0.8, delay: index * 0.15 + 0.4 }}
             style={{ transformOrigin: "left" }}
           />
         </div>
       )}
 
+      {/* Animated ring behind icon */}
+      <motion.div
+        className="absolute top-0 w-16 h-16"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={isInView ? { scale: [0, 1.3, 1], opacity: [0, 0.3, 0] } : {}}
+        transition={{ duration: 0.8, delay: index * 0.15 + 0.2 }}
+      >
+        <div className="w-full h-full border-2 border-arc-accent rounded-none" />
+      </motion.div>
+
       {/* Icon */}
       <motion.div
-        className="w-16 h-16 bg-white border-2 border-arc-primary/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-arc-accent group-hover:shadow-lg group-hover:shadow-arc-accent/20"
+        className="w-16 h-16 bg-white border-2 border-arc-primary/20 flex items-center justify-center mb-4 transition-all duration-300 group-hover:border-arc-accent group-hover:shadow-lg group-hover:shadow-arc-accent/20 relative z-10"
+        initial={{ rotate: -10 }}
+        animate={isInView ? { rotate: 0 } : {}}
+        transition={{ duration: 0.5, delay: index * 0.15 + 0.1 }}
         whileHover={{ scale: 1.05, rotate: 3 }}
       >
         <Icon className="w-7 h-7 text-arc-primary transition-colors group-hover:text-arc-accent" />
       </motion.div>
 
       {/* Label */}
-      <h4 className="font-semibold text-foreground mb-1">{step.label}</h4>
-      <p className="text-sm text-muted-foreground text-center">{step.description}</p>
+      <motion.h4
+        className="font-semibold text-foreground mb-1"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.4, delay: index * 0.15 + 0.3 }}
+      >
+        {step.label}
+      </motion.h4>
+      <motion.p
+        className="text-sm text-muted-foreground text-center"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.4, delay: index * 0.15 + 0.4 }}
+      >
+        {step.description}
+      </motion.p>
     </motion.div>
   );
 }
@@ -371,9 +400,6 @@ export default function ProductPage() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <CustomCursor />
-
       {/* Page Header */}
       <section className="relative pt-32 pb-12 bg-arc-primary overflow-hidden">
         {/* Background decorations */}
@@ -417,14 +443,13 @@ export default function ProductPage() {
           >
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
-              Complete Control.<br />
-              <span className="text-arc-accent">Total Clarity.</span>
+              Stop juggling systems.<br />
+              <span className="text-arc-accent">Start building with Arc.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-              Residential construction operates across multiple domains simultaneously.
-              Arc unifies them all into one powerful platform.
+              One platform for your entire construction workflow.
             </p>
           </motion.div>
         </div>
@@ -438,11 +463,10 @@ export default function ProductPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              One system. Every phase.
+              Built for the entire project lifecycle.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From first contact to ongoing maintenance, Arc guides your projects
-              through every milestone with precision.
+              Arc handles everything—lead qualification, estimates, construction tracking, client communication, and post-construction service.
             </p>
           </AnimatedSection>
 
@@ -496,99 +520,37 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* App Preview Section */}
-      <section className="py-24 lg:py-32 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <AnimatedSection direction="left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Designed for how you actually work.
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Most builders manage projects with fragmented tools—separate applications
-                for scheduling, communication, documentation, and financial tracking.
-                This fragmentation creates gaps where information is lost, deadlines are
-                missed, and projects suffer.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Arc eliminates these gaps entirely. Every tool communicates with
-                every other tool. Changes propagate automatically. Your team always
-                works from the same source of truth.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <MagneticButton href="/contact" variant="outline" showArrow>
-                  Request Demo
-                </MagneticButton>
-                <MagneticButton href="/about" variant="outline">
-                  Our Story
-                </MagneticButton>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right" delay={0.2}>
-              <div className="relative" data-cursor-expand>
-                {/* Decorative elements */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-arc-accent/5 to-arc-primary/5 -z-10" />
-                <motion.div
-                  className="absolute -top-8 -right-8 w-32 h-32 bg-arc-accent/10"
-                  animate={{ rotate: [0, 5, 0] }}
-                  transition={{ duration: 8, repeat: Infinity }}
-                />
-                <motion.div
-                  className="absolute -bottom-6 -left-6 w-24 h-24 bg-arc-primary/10"
-                  animate={{ rotate: [0, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity }}
-                />
-
-                {/* App mockup placeholder */}
-                <div className="relative overflow-hidden shadow-2xl bg-white border border-slate-200 aspect-[16/10] flex items-center justify-center">
-                    <div className="text-center p-8">
-                        <div className="w-16 h-16 bg-arc-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Calendar className="w-8 h-8 text-arc-primary" />
-                        </div>
-                        <h3 className="text-xl font-bold text-foreground mb-2">Gantt Schedule</h3>
-                        <p className="text-muted-foreground text-sm">Interactive Project Timeline Visualization</p>
-                    </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
       {/* Additional Features Grid */}
       <section className="py-24 lg:py-32 bg-background-alt">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Beyond the basics.
+              Built to grow with you.
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Additional capabilities that set Arc apart from generic project
-              management tools.
+              Arc adapts to your business—not the other way around.
             </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: ClipboardList,
-                title: "Change Order Management",
-                description:
-                  "Digital submission, approval workflows, and automatic budget integration. Both parties protected through proper documentation.",
-              },
-              {
-                icon: Home,
-                title: "Post-Construction Services",
-                description:
-                  "Transition completed projects into estate management for ongoing homeowner service and recurring revenue.",
-              },
-              {
                 icon: Zap,
-                title: "QuickBooks Integration",
+                title: "Custom Development",
                 description:
-                  "Two-way synchronization keeps your accounting current without manual data entry or reconciliation headaches.",
+                  "Need a feature specific to your workflow? Arc's team can build custom modules tailored to how your business operates.",
+              },
+              {
+                icon: Shield,
+                title: "Dedicated Support",
+                description:
+                  "Local, construction-focused support from a team that understands your industry. No generic help desks or overseas call centers.",
+              },
+              {
+                icon: Layers,
+                title: "Seamless Migration",
+                description:
+                  "Transitioning from spreadsheets or other tools? We handle the migration so you can focus on building.",
               },
             ].map((item, index) => {
               const Icon = item.icon;
@@ -641,18 +603,9 @@ export default function ProductPage() {
                 href="/contact"
                 variant="outline"
                 size="lg"
-                showArrow
                 magneticStrength={0.25}
               >
                 Schedule Demo
-              </MagneticButton>
-              <MagneticButton
-                href="/about"
-                variant="outline"
-                size="lg"
-                magneticStrength={0.25}
-              >
-                Learn Our Story
               </MagneticButton>
             </div>
           </AnimatedSection>

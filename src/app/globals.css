@@ -162,10 +162,10 @@ blockquote, .quote-text {
   background: var(--arc-primary-light);
 }
 
-/* Selection */
+/* Selection - neutral styling */
 ::selection {
-  background: var(--arc-accent);
-  color: var(--arc-primary);
+  background: var(--arc-primary);
+  color: white;
 }
 
 /* Smooth image loading */

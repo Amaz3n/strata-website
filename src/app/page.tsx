@@ -6,7 +6,6 @@ import Button from "@/components/Button";
 import AnimatedSection from "@/components/AnimatedSection";
 import SplitText from "@/components/SplitText";
 import MagneticButton from "@/components/MagneticButton";
-import CustomCursor from "@/components/CustomCursor";
 import HeroBackground from "@/components/HeroBackground";
 import BentoGrid from "@/components/BentoGrid";
 import {
@@ -93,9 +92,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Custom Cursor - global */}
-      <CustomCursor />
-
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -144,7 +140,6 @@ export default function HomePage() {
               href="/contact"
               variant="outline"
               size="lg"
-              showArrow
               magneticStrength={0.25}
             >
               Schedule a Demo
@@ -232,39 +227,20 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-                The core system for residential construction.
+                Robust project management for home builders.
               </h2>
             </AnimatedSection>
 
             <AnimatedSection delay={0.1}>
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
                 <p>
-                  Residential construction demands precision at every
-                  level—from initial estimates through final inspections and
-                  beyond. Arc eliminates the fragmentation undermining
-                  project success. This is comprehensive project management
-                  built specifically for builders and trades: sales pipeline
-                  management, scheduling, estimating, documentation, client
-                  communication, and warranty tracking unified in a single
-                  platform.
-                </p>
-                <p>
-                  No third-party integrations required. No switching between
-                  systems. Just complete visibility and control from foundation
-                  to completion.
-                </p>
-                <p>
-                  Your field teams access critical tools directly from job
-                  sites. Your clients engage through customized portals. Your
-                  accounting syncs seamlessly with QuickBooks. Every element of
-                  the construction process finds its place within Arc&apos;s
-                  organized structure.
+                  Residential construction demands precision at every level. Arc eliminates the fragmentation undermining project success with sales pipeline management, scheduling, estimating, documentation, client communication, and warranty tracking unified in a single platform. No third-party integrations required, no switching between systems—just complete visibility and control.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.2} className="mt-10 text-center">
-              <Button href="/product" variant="outline" showArrow>
+              <Button href="/product" variant="outline">
                 Explore the Platform
               </Button>
             </AnimatedSection>
@@ -277,76 +253,20 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Essential tools. Singular system.
+              Essential tools in a singular system
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to manage residential construction projects,
-              unified in one powerful platform.
+              Everything you need to manage construction projects, and the opportunity for custom features.
             </p>
           </AnimatedSection>
 
           <BentoGrid items={features} />
 
           <AnimatedSection delay={0.4} className="mt-12 text-center">
-            <Button href="/product" variant="outline" showArrow>
+            <Button href="/product" variant="outline">
               See How It Works
             </Button>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Module 3: Tease Purpose */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <AnimatedSection direction="left">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Built from experience, not assumption.
-              </h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Arc exists because residential construction in Southwest
-                  Florida demands software as elevated as the clients you
-                  serve. We&apos;ve witnessed seasoned builders struggle with
-                  costly, imperfect systems, juggling multiple applications,
-                  losing critical information between platforms and watching
-                  projects suffer from inadequate tools.
-                </p>
-                <p>
-                  Local builders need something better: a comprehensive
-                  solution built on the reality of construction.
-                </p>
-                <p>
-                  This isn&apos;t software adapted from other industries.
-                  It&apos;s a platform engineered for the challenges you face
-                  daily, designed by a team which understands successful
-                  projects require proper organization, efficient workflow, and
-                  complete integration.
-                </p>
-              </div>
-              <div className="mt-8">
-                <Button href="/about" variant="outline" showArrow>
-                  Our Story
-                </Button>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right" delay={0.2}>
-              <div className="relative">
-                {/* Decorative Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-arc-accent/10 to-arc-primary/10 transform rotate-2" />
-
-                {/* Image Placeholder */}
-                <div className="relative bg-[#0f0f0f] aspect-[4/3] overflow-hidden flex items-center justify-center">
-                   <img
-                    src="/arc-app.png"
-                    alt="Construction Site"
-                    className="w-full h-full object-cover opacity-80"
-                  />
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
         </div>
       </section>
 
