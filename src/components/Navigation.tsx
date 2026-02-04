@@ -21,6 +21,13 @@ export default function Navigation() {
   const { scrollYProgress } = useScroll();
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  // Pages that have a dark hero section and should start with a transparent header
+  const transparentHeaderPaths = ["/", "/contact", "/product"];
+  const shouldBeTransparent = transparentHeaderPaths.includes(pathname);
+  
+  // Force "scrolled" look (white bg, dark text) if not on a transparent-header page
+  const showScrolledHeader = isScrolled || !shouldBeTransparent;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -40,7 +47,7 @@ export default function Navigation() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
+          showScrolledHeader
             ? "bg-white/90 backdrop-blur-md border-b border-black/5"
             : "bg-transparent"
         )}
@@ -61,7 +68,7 @@ export default function Navigation() {
               <span
                 className={cn(
                   "text-xl font-bold tracking-tight transition-all duration-300 group-hover:opacity-70",
-                  isScrolled ? "text-arc-primary" : "text-white"
+                  showScrolledHeader ? "text-arc-primary" : "text-white"
                 )}
               >
                 ARC
@@ -78,7 +85,7 @@ export default function Navigation() {
                     href={link.href}
                     className={cn(
                       "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
-                      isScrolled
+                      showScrolledHeader
                         ? isActive
                           ? "text-arc-primary"
                           : "text-arc-charcoal/70 hover:text-arc-primary"
@@ -105,7 +112,7 @@ export default function Navigation() {
               href="https://app.arcnaples.com"
               className={cn(
                 "group hidden md:inline-flex relative px-5 py-2.5 text-sm font-medium z-10 overflow-hidden transition-all duration-300",
-                isScrolled
+                showScrolledHeader
                   ? "bg-black/5 text-arc-charcoal/70 hover:bg-black/10 hover:text-arc-primary"
                   : "bg-white/10 text-white/80 hover:bg-white/15 hover:text-white"
               )}
@@ -120,7 +127,7 @@ export default function Navigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
                 "md:hidden p-2 transition-colors duration-300",
-                isScrolled
+                showScrolledHeader
                   ? "text-arc-primary hover:bg-arc-primary/5"
                   : "text-white hover:bg-white/10"
               )}
