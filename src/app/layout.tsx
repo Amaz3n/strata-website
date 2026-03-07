@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins, DM_Serif_Display, Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -77,6 +78,7 @@ export default function RootLayout({
             <Footer />
           </SmoothScroll>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

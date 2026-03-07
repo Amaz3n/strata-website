@@ -104,8 +104,8 @@ const ChartTooltip = RechartsPrimitive.Tooltip
 
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
-    React.ComponentProps<'div'> & {
+  React.ComponentProps<'div'> &
+    RechartsPrimitive.TooltipContentProps & {
       hideLabel?: boolean
       hideIndicator?: boolean
       indicator?: 'line' | 'dot' | 'dashed'
@@ -189,10 +189,14 @@ const ChartTooltipContent = React.forwardRef<
             const key = `${nameKey || item.name || item.dataKey || 'value'}`
             const itemConfig = getPayloadConfigFromPayload(config, item, key)
             const indicatorColor = color || item.payload.fill || item.color
+            const itemDataKey =
+              typeof item.dataKey === 'string' || typeof item.dataKey === 'number'
+                ? item.dataKey
+                : index
 
             return (
               <div
-                key={item.dataKey}
+                key={itemDataKey}
                 className={cn(
                   'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
                   indicator === 'dot' && 'items-center',
@@ -261,7 +265,7 @@ const ChartLegend = RechartsPrimitive.Legend
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'div'> &
-    Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+    Pick<RechartsPrimitive.DefaultLegendContentProps, 'payload' | 'verticalAlign'> & {
       hideIcon?: boolean
       nameKey?: string
     }
