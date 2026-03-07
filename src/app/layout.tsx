@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Montserrat, Poppins, DM_Serif_Display } from "next/font/google";
+import { Montserrat, Poppins, DM_Serif_Display, Geist } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { ThemeProvider } from "@/components/theme-provider";
+
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -57,13 +64,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.variable} ${poppins.variable} ${dmSerifDisplay.variable} antialiased`}>
-        <SmoothScroll>
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${montserrat.variable} ${poppins.variable} ${dmSerifDisplay.variable} ${geist.variable} antialiased transition-colors duration-300`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+        >
+          <SmoothScroll>
+            <Navigation />
+            <main>{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );

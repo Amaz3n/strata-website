@@ -9,8 +9,6 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/product", label: "Product" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navigation() {
@@ -22,7 +20,7 @@ export default function Navigation() {
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   // Pages that have a dark hero section and should start with a transparent header
-  const transparentHeaderPaths = ["/", "/contact", "/product"];
+  const transparentHeaderPaths = ["/"];
   const shouldBeTransparent = transparentHeaderPaths.includes(pathname);
   
   // Force "scrolled" look (white bg, dark text) if not on a transparent-header page
@@ -37,10 +35,7 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+  if (pathname === "/") return null;
 
   return (
     <>
@@ -48,7 +43,7 @@ export default function Navigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           showScrolledHeader
-            ? "bg-white/90 backdrop-blur-md border-b border-black/5"
+            ? "bg-background/80 backdrop-blur-md border-b border-border/30"
             : "bg-transparent"
         )}
       >
@@ -68,7 +63,7 @@ export default function Navigation() {
               <span
                 className={cn(
                   "text-xl font-bold tracking-tight transition-all duration-300 group-hover:opacity-70",
-                  showScrolledHeader ? "text-arc-primary" : "text-white"
+                  showScrolledHeader ? "text-foreground" : "text-white"
                 )}
               >
                 ARC
@@ -87,8 +82,8 @@ export default function Navigation() {
                       "group relative px-4 py-2 text-sm font-medium transition-colors duration-300",
                       showScrolledHeader
                         ? isActive
-                          ? "text-arc-primary"
-                          : "text-arc-charcoal/70 hover:text-arc-primary"
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
                         : isActive
                           ? "text-white"
                           : "text-white/70 hover:text-white"
@@ -113,7 +108,7 @@ export default function Navigation() {
               className={cn(
                 "group hidden md:inline-flex relative px-5 py-2.5 text-sm font-medium z-10 overflow-hidden transition-all duration-300",
                 showScrolledHeader
-                  ? "bg-black/5 text-arc-charcoal/70 hover:bg-black/10 hover:text-arc-primary"
+                  ? "bg-foreground/5 text-muted-foreground hover:bg-foreground/10 hover:text-foreground"
                   : "bg-white/10 text-white/80 hover:bg-white/15 hover:text-white"
               )}
             >
@@ -128,7 +123,7 @@ export default function Navigation() {
               className={cn(
                 "md:hidden p-2 transition-colors duration-300",
                 showScrolledHeader
-                  ? "text-arc-primary hover:bg-arc-primary/5"
+                  ? "text-foreground hover:bg-foreground/5"
                   : "text-white hover:bg-white/10"
               )}
               aria-label="Toggle menu"
@@ -163,17 +158,17 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
-              className="fixed top-0 right-0 bottom-0 w-[280px] bg-white z-50 md:hidden"
+              className="fixed top-0 right-0 bottom-0 w-[280px] bg-background z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-black/5">
-                  <span className="text-xl font-bold tracking-tight text-arc-primary">
+                <div className="flex items-center justify-between p-6 border-b border-border/30">
+                  <span className="text-xl font-bold tracking-tight text-foreground">
                     ARC
                   </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-arc-primary hover:bg-arc-primary/5 transition-colors"
+                    className="p-2 text-foreground hover:bg-foreground/5 transition-colors"
                     aria-label="Close menu"
                   >
                     <X className="w-5 h-5" />
@@ -198,8 +193,8 @@ export default function Navigation() {
                             className={cn(
                               "block px-4 py-3 text-base font-medium transition-colors",
                               isActive
-                                ? "text-arc-primary bg-arc-primary/5"
-                                : "text-arc-charcoal/70 hover:text-arc-primary hover:bg-arc-primary/5"
+                                ? "text-foreground bg-foreground/5"
+                                : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                             )}
                           >
                             {link.label}
@@ -211,7 +206,7 @@ export default function Navigation() {
                 </nav>
 
                 {/* Sign In */}
-                <div className="p-6 border-t border-black/5">
+                <div className="p-6 border-t border-border/30">
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -219,7 +214,7 @@ export default function Navigation() {
                   >
                     <a
                       href="https://app.arcnaples.com"
-                      className="group relative block w-full text-center px-6 py-3 bg-black/5 text-arc-charcoal/70 font-medium overflow-hidden transition-all duration-300 hover:bg-black/10 hover:text-arc-primary"
+                      className="group relative block w-full text-center px-6 py-3 bg-foreground/5 text-muted-foreground font-medium overflow-hidden transition-all duration-300 hover:bg-foreground/10 hover:text-foreground"
                     >
                       <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                       <span className="relative">Sign In</span>

@@ -5,24 +5,28 @@
 
 :root {
   /* Arc Brand Colors - Primary */
-  --arc-deep-slate: #2C3E50; /* RGB: 44, 62, 80 */
-  --arc-sandstone: #D4B896; /* RGB: 212, 184, 150 */
-  --arc-terracotta: #C1714B; /* RGB: 193, 113, 75 */
+  --arc-deep-slate: #243342;
+  --arc-sandstone: #D8C7A7;
+  --arc-terracotta: #D56A3A;
 
   /* Arc Brand Colors - Secondary */
-  --arc-sky-blue: #5B9BD5; /* RGB: 91, 155, 213 */
-  --arc-warm-white: #F5F3F0; /* RGB: 245, 243, 240 */
-  --arc-charcoal: #3D3D3D; /* RGB: 61, 61, 61 */
+  --arc-sky-blue: #2F6FED; /* Brand blue */
+  --arc-ink-blue: #1E3A8A; /* Hover/active */
+  --arc-warm-white: #F6F5F2;
+  --arc-charcoal: #3D3D3D;
 
   /* Derived colors for various uses */
   --arc-primary: var(--arc-deep-slate);
   --arc-primary-light: #3a4f63;
   --arc-primary-dark: #1f2937;
+  /* Accent is terracotta for warmth against the navy base */
   --arc-accent: var(--arc-terracotta);
-  --arc-accent-light: #d4856a;
-  --arc-accent-dark: #a85f3d;
+  --arc-accent-light: #E8845A;
+  --arc-accent-dark: #B85530;
+  --arc-accent-warm: var(--arc-terracotta);
   --background-alt: var(--arc-warm-white);
   --foreground-muted: #6b7280;
+  --hero-grid-line: rgba(36, 51, 66, 0.34);
 
   /* shadcn variables mapped to Arc colors */
   /* Sharp corners to match the app's design language */
@@ -33,7 +37,7 @@
   --card-foreground: var(--arc-deep-slate);
   --popover: #ffffff;
   --popover-foreground: var(--arc-deep-slate);
-  --primary: var(--arc-deep-slate);
+  --primary: var(--arc-terracotta);
   --primary-foreground: #ffffff;
   --secondary: var(--arc-warm-white);
   --secondary-foreground: var(--arc-deep-slate);
@@ -45,12 +49,35 @@
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: var(--arc-sky-blue);
+  --ring: var(--arc-terracotta);
   --chart-1: var(--arc-terracotta);
   --chart-2: var(--arc-sandstone);
-  --chart-3: var(--arc-sky-blue);
+  --chart-3: var(--arc-terracotta);
   --chart-4: var(--arc-deep-slate);
   --chart-5: var(--arc-charcoal);
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #ffffff;
+  --card: #0d172a;
+  --card-foreground: #ffffff;
+  --popover: #0d172a;
+  --popover-foreground: #ffffff;
+  --primary: var(--arc-terracotta);
+  --primary-foreground: #ffffff;
+  --secondary: #0f1a2e;
+  --secondary-foreground: #ffffff;
+  --muted: #0f1a2e;
+  --muted-foreground: #94a3b8;
+  --accent: #0f1a2e;
+  --accent-foreground: #ffffff;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: var(--arc-terracotta);
+  --hero-grid-line: rgba(255, 255, 255, 0.3);
 }
 
 @theme inline {
@@ -58,12 +85,14 @@
   --font-sans: var(--font-poppins), system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-montserrat), system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-dm-serif), Georgia, serif;
+  --font-geist: var(--font-geist), system-ui, -apple-system, sans-serif;
 
   /* Arc brand colors */
   --color-arc-deep-slate: var(--arc-deep-slate);
   --color-arc-sandstone: var(--arc-sandstone);
   --color-arc-terracotta: var(--arc-terracotta);
   --color-arc-sky-blue: var(--arc-sky-blue);
+  --color-arc-ink-blue: var(--arc-ink-blue);
   --color-arc-warm-white: var(--arc-warm-white);
   --color-arc-charcoal: var(--arc-charcoal);
 
@@ -74,6 +103,7 @@
   --color-arc-accent: var(--arc-accent);
   --color-arc-accent-light: var(--arc-accent-light);
   --color-arc-accent-dark: var(--arc-accent-dark);
+  --color-arc-accent-warm: var(--arc-accent-warm);
   --color-background-alt: var(--background-alt);
   --color-foreground-muted: var(--foreground-muted);
 
@@ -109,6 +139,26 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+
+  @keyframes shine {
+    from {
+      transform: translateX(-100%) rotate(12deg);
+    }
+    to {
+      transform: translateX(100%) rotate(12deg);
+    }
+  }
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  --animate-shine: shine 8s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
 }
 
 * {
@@ -122,6 +172,15 @@ html {
 body {
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
   line-height: 1.6;
+}
+
+/* Smooth theme transitions across the app */
+*,
+*::before,
+*::after {
+  transition-property: background-color, color, border-color, outline-color, box-shadow, fill, stroke;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Typography hierarchy per brand guidelines */
@@ -192,6 +251,68 @@ img[data-loading="true"] {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+}
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(to right, var(--hero-grid-line) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, var(--hero-grid-line) 1.5px, transparent 1.5px);
+  background-size: 88px 88px;
+}
+
+/* Abstract hero gradient tuned to the Blueprint Tech palette */
+.hero-abstract-gradient-light {
+  background:
+    /* Full-canvas base tint (stronger on light mode) */
+    linear-gradient(180deg, rgba(212, 225, 255, 0.98) 0%, rgba(196, 213, 252, 0.9) 38%, rgba(255, 255, 255, 0) 100%),
+    /* Diagonal sweeps covering full hero */
+    linear-gradient(110deg, rgba(47, 111, 237, 0.56) 0%, rgba(47, 111, 237, 0) 58%),
+    linear-gradient(300deg, rgba(30, 58, 138, 0.48) 0%, rgba(30, 58, 138, 0) 60%),
+    /* Broad mesh to avoid small-circle look */
+    radial-gradient(1800px 1000px at 50% 22%, rgba(47, 111, 237, 0.36) 0%, rgba(47, 111, 237, 0) 72%),
+    radial-gradient(2000px 1200px at 52% 56%, rgba(30, 58, 138, 0.3) 0%, rgba(30, 58, 138, 0) 76%),
+    radial-gradient(2200px 1200px at 50% 70%, rgba(213, 106, 58, 0.15) 0%, rgba(213, 106, 58, 0) 82%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.hero-abstract-gradient-dark {
+  background:
+    /* Dark base + fade to transparent down the page (more readable contrast) */
+    linear-gradient(180deg, rgba(11, 18, 32, 0.99) 0%, rgba(11, 18, 32, 0.88) 44%, rgba(11, 18, 32, 0) 100%),
+    /* Full-canvas blueprint sweeps */
+    linear-gradient(110deg, rgba(47, 111, 237, 0.44) 0%, rgba(47, 111, 237, 0) 60%),
+    linear-gradient(300deg, rgba(30, 58, 138, 0.58) 0%, rgba(30, 58, 138, 0) 62%),
+    /* Broad mesh depth */
+    radial-gradient(1800px 1000px at 50% 22%, rgba(47, 111, 237, 0.32) 0%, rgba(47, 111, 237, 0) 72%),
+    radial-gradient(2000px 1200px at 52% 58%, rgba(30, 58, 138, 0.46) 0%, rgba(30, 58, 138, 0) 76%),
+    radial-gradient(2200px 1300px at 50% 72%, rgba(213, 106, 58, 0.16) 0%, rgba(213, 106, 58, 0) 84%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+/* Fade hero background image to transparent at the bottom */
+.hero-bg-fade {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 82%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 82%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: top;
+  mask-position: top;
 }
 
 /* Hero typography - large headlines per brand guidelines */
@@ -270,7 +391,7 @@ img[data-loading="true"] {
 }
 
 .hero-headline .text-arc-accent {
-  background: linear-gradient(180deg, var(--arc-terracotta) 0%, rgba(193,113,75,0.9) 100%);
+  background: linear-gradient(180deg, var(--arc-terracotta) 0%, var(--arc-accent-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -370,4 +491,56 @@ img[data-loading="true"] {
     0 40px 80px -20px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     0 0 80px rgba(193, 113, 75, 0.1);
+}
+
+/* Codex-style gradient background */
+.gradient-codex {
+  background: linear-gradient(135deg, #5B9BD5 0%, #7C6BC4 50%, #9B7ED9 100%);
+}
+
+/* Browser mockup frame */
+.browser-mockup {
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.browser-mockup-bar {
+  background: #1c1c1c;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browser-mockup-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.browser-mockup-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.browser-mockup-url {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.browser-mockup-url span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: monospace;
 }
