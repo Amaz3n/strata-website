@@ -36,12 +36,13 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Arc | Project Management for Residential Construction",
+  title: "Arc | Residential Construction Software",
   description:
-    "Comprehensive project management software engineered for residential construction. From lead to warranty, every phase organized under one system.",
+    "Arc System is the connected construction system for residential builders, unifying pipeline, scheduling, financials, and warranty in one platform.",
   keywords: [
+    "construction system",
+    "residential construction system",
     "construction management",
-    "project management",
     "residential construction",
     "builder software",
     "Naples FL",
@@ -51,9 +52,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Arc" }],
   openGraph: {
-    title: "Arc | Project Management for Residential Construction",
+    title: "Arc | Residential Construction Software",
     description:
-      "Comprehensive project management software engineered for residential construction.",
+      "Residential construction software for connected teams.",
     type: "website",
     locale: "en_US",
   },

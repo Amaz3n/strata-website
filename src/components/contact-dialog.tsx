@@ -6,7 +6,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { motion } from "framer-motion"
 
 const contactMethods = [
   {
@@ -36,7 +35,7 @@ export function ContactPopover({ children }: { children: React.ReactNode }) {
         <div className="px-4 pt-4 pb-2">
           <p className="text-sm font-semibold text-foreground">Get in touch</p>
           <p className="text-xs text-muted-foreground mt-0.5">
-            Questions about Arc or want to see it in action? We are based in Naples and offer live demos across Southwest Florida.
+            Questions about Arc? We can walk your team through a live demo.
           </p>
         </div>
 

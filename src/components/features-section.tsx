@@ -14,41 +14,41 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    heading: "Mini CRM, Built In",
+    heading: "Pipeline",
     description:
-      "Arc includes a purpose-built mini CRM for construction teams: capture leads, log touchpoints, manage follow-ups, and move deals into estimating in one flow. Instead of paying for Procore + Salesforce, you run pipeline and project execution inside Arc.",
+      "Capture leads, log conversations, and move opportunities into estimating without switching tools. Sales and delivery stay connected from day one.",
     image: "/pipeline2.png",
     imageAlt: "Arc Pipeline workspace showing funnel stages, CRM activity, and opportunities",
     aspect: "5/4",
   },
   {
-    heading: "Schedule Intelligence",
+    heading: "Scheduling",
     description:
-      "Visual Gantt scheduling with milestone tracking and benchmark management. Know exactly where every project stands and what's coming next with smart dependencies.",
+      "Visual Gantt schedules with milestones and dependencies keep teams aligned on what changed, what is blocked, and what happens next.",
     image: "/schedule.png",
     imageAlt: "Gantt chart visualization of a project schedule",
     aspect: "5/4",
   },
   {
-    heading: "Integrated E-Signing",
+    heading: "Integrated Signatures",
     description:
-      "Arc has e-signing built directly into your workflow, so contracts and change orders are signed where the work already happens. No separate DocuSign account, extra seat cost, or tool switching required.",
+      "Send contracts and change orders for signature directly in the workflow. No separate e-sign app and no broken handoffs.",
     image: "/signature.png",
     imageAlt: "Arc e-signing workflow showing signature block placement directly inside a PDF",
     aspect: "5/4",
   },
   {
-    heading: "Client & Trade Portals",
+    heading: "Stakeholder Portals",
     description:
-      "Arc gives every project a client portal and subcontractor portal for updates, approvals, documents, invoicing, and messaging in one place. Teams move faster with fewer status calls, less inbox churn, and clearer accountability.",
+      "Give clients and trade partners clear portals for updates, approvals, files, invoicing, and communication in one place.",
     image: "/client-portal.png",
     imageAlt: "Arc client and subcontractor portals showing project updates, approvals, and communication",
     aspect: "5/4",
   },
   {
-    heading: "Financials, Fully Connected",
+    heading: "Financials",
     description:
-      "Track budgets, contracts, retainage, draw schedules, and invoicing in one financial workspace. Arc also handles subcontractor payables and QuickBooks Online sync, so field progress and financials stay aligned.",
+      "Track budgets, contracts, retainage, draws, invoicing, and payables in one source of truth with QuickBooks sync built in.",
     image: "/financials.png",
     imageAlt: "Arc financials workspace showing budgets, contracts, invoicing, and payables",
     aspect: "5/4",

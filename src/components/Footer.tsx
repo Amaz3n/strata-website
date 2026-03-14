@@ -20,7 +20,7 @@ export default function Footer() {
               href="mailto:info@arcnaples.com"
               className="hover:text-foreground transition-colors duration-300"
             >
-              Contact
+              Schedule a Demo
             </a>
           </nav>
         </div>

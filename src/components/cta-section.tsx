@@ -6,17 +6,17 @@ export function CtaSection() {
         <div className="relative">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
-              One system for the entire build.
+              See Arc in action.
             </h2>
             <p className="mt-5 max-w-lg text-balance text-lg text-muted-foreground">
-              From the first lead to the final warranty item — every phase organized under one roof.
+              A live walkthrough of the system behind your workflow, from pipeline through closeout.
             </p>
             <div className="mt-10 flex items-center gap-6">
               <a
                 href="mailto:info@arcnaples.com"
                 className="group inline-flex items-center gap-2.5 bg-foreground text-background px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90"
               >
-                Book a Demo
+                Schedule a Demo
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
                   fill="none"

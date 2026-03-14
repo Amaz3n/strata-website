@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import { ThemeToggle } from "./ThemeToggle"
 import { ContactPopover } from "./contact-dialog"
@@ -50,22 +51,72 @@ export function SiteHeader() {
         </motion.div>
 
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:grid md:h-20 md:grid-cols-[1fr_auto_1fr]">
-          {/* Logo - Just Arc text */}
-          <Link href="/" className="group relative z-10 justify-self-start">
-            <motion.span
-              className="text-2xl font-bold tracking-tight text-foreground relative inline-block"
-              whileHover={{ scale: 1.02 }}
+          {/* Logo */}
+          <Link href="/" aria-label="Arc home" className="group relative z-10 justify-self-start">
+            <motion.div
+              className="relative overflow-hidden rounded-xl px-1 py-0.5"
+              initial="rest"
+              whileHover="hover"
               whileTap={{ scale: 0.98 }}
+              variants={{
+                rest: { scale: 1, y: 0 },
+                hover: { scale: 1.03, y: -1 },
+              }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
-              Arc
-              {/* Animated underline on hover */}
               <motion.span
-                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-arc-sky-blue to-arc-ink-blue origin-left"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3 }}
+                className="pointer-events-none absolute -inset-3 rounded-full bg-[radial-gradient(circle,rgba(91,155,213,0.32)_0%,rgba(91,155,213,0)_70%)] blur-lg"
+                variants={{
+                  rest: { opacity: 0 },
+                  hover: { opacity: 1 },
+                }}
+                transition={{ duration: 0.25 }}
               />
-            </motion.span>
+              <motion.span
+                className="pointer-events-none absolute inset-y-0 -left-16 w-14 bg-gradient-to-r from-transparent via-white/70 to-transparent"
+                variants={{
+                  rest: { x: 0, opacity: 0 },
+                  hover: { x: 132, opacity: [0, 1, 0] },
+                }}
+                transition={{ duration: 0.65, ease: "easeInOut" }}
+              />
+              <div className="relative flex items-center gap-2">
+                <motion.div
+                  variants={{
+                    rest: { rotate: 0, scale: 1 },
+                    hover: { rotate: -8, scale: 1.08 },
+                  }}
+                  transition={{ type: "spring", stiffness: 280, damping: 18 }}
+                >
+                  <Image
+                    src="/logo.svg"
+                    alt="Arc"
+                    width={40}
+                    height={40}
+                    priority
+                    className="h-9 w-9 md:h-10 md:w-10"
+                  />
+                </motion.div>
+                <motion.span
+                  className="relative text-xl md:text-2xl font-bold tracking-tight text-foreground"
+                  variants={{
+                    rest: { letterSpacing: "-0.01em" },
+                    hover: { letterSpacing: "0.01em" },
+                  }}
+                  transition={{ duration: 0.25 }}
+                >
+                  Arc
+                  <motion.span
+                    className="absolute left-0 right-0 -bottom-1 h-0.5 origin-left rounded-full bg-gradient-to-r from-arc-sky-blue via-white/80 to-arc-ink-blue"
+                    variants={{
+                      rest: { scaleX: 0, opacity: 0 },
+                      hover: { scaleX: 1, opacity: 1 },
+                    }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </motion.span>
+              </div>
+            </motion.div>
           </Link>
 
           {/* Right side */}
@@ -197,14 +248,16 @@ export function SiteHeader() {
             <div className="relative h-full flex flex-col text-white">
               {/* Header */}
               <div className="flex items-center justify-between p-6">
-                <motion.span
-                  className="text-2xl font-bold tracking-tight"
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  Arc
-                </motion.span>
+                  <div className="flex items-center gap-3">
+                    <Image src="/logo.svg" alt="Arc" width={40} height={40} className="h-10 w-10" />
+                    <span className="text-2xl font-bold tracking-tight text-white">Arc</span>
+                  </div>
+                </motion.div>
                 <motion.button
                   onClick={() => setMenuOpen(false)}
                   className="relative w-10 h-10 flex items-center justify-center"

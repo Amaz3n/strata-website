@@ -22,6 +22,10 @@ export function HeroSection() {
         />
       </div>
 
+      <p className="relative z-10 text-xs uppercase tracking-[0.2em] text-muted-foreground/80 font-semibold font-geist">
+        For Residential Builders
+      </p>
+
       {/* Heading */}
       <h1 className="relative z-10 text-balance text-center text-6xl font-semibold tracking-tight text-foreground md:text-8xl lg:text-9xl drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] font-geist">
         Arc
@@ -30,7 +34,7 @@ export function HeroSection() {
 
       {/* Subheading */}
       <p className="relative z-10 mt-6 max-w-xl text-balance text-center text-lg text-muted-foreground md:text-xl font-geist">
-        Run the full build lifecycle in one calm control surface. From lead tracking through warranty management.
+        From first inquiry to final warranty, Arc keeps your entire build lifecycle connected in one system.
       </p>
 
       {/* CTA */}
@@ -55,7 +59,7 @@ export function HeroSection() {
 
           <Image
             src="/controltower.png"
-            alt="Arc application interface showing project dashboard"
+            alt="Arc interface showing unified construction operations"
             width={1920}
             height={1080}
             className="w-full relative"
