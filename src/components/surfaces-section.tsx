@@ -1,5 +1,13 @@
 const features = [
   {
+    title: "Critical Path Visibility",
+    description: "Track dependencies across trades and phases. Milestone drift alerts keep delays from catching you off guard.",
+  },
+  {
+    title: "Warranty & Closeout",
+    description: "Manage closeout checklists and warranty items without losing the project history behind them.",
+  },
+  {
     title: "Drawings & Markups",
     description: "Coordinate sheets, markups, and revisions with full project context.",
   },
@@ -16,28 +24,20 @@ const features = [
     description: "Manage client selections with approvals connected to budget and change orders.",
   },
   {
-    title: "Change Orders",
-    description: "Create, price, and approve change orders with direct links to contracts and billing.",
-  },
-  {
-    title: "Online Payments",
-    description: "Send invoices with payment links and collect online via Stripe.",
-  },
-  {
     title: "Documents & Files",
-    description: "Centralized files with version history, accessible in every workflow.",
+    description: "Centralized file storage with version history, accessible across every workflow.",
   },
   {
     title: "Reporting Suite",
     description: "Track AR, AP, draws, forecasts, schedule health, and payment ledgers.",
   },
   {
-    title: "Warranty & Closeout",
-    description: "Manage closeout checklists and warranty items without losing project history.",
-  },
-  {
     title: "AI-Powered Search",
     description: "Ask questions across projects and get answers from files, logs, and records.",
+  },
+  {
+    title: "Online Payments",
+    description: "Send invoices with payment links and collect online via Stripe.",
   },
 ]
 
@@ -47,11 +47,8 @@ export function SurfacesSection() {
       <div className="mx-auto max-w-screen-xl">
         {/* Section heading */}
         <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
-          Everything else, already connected
+          Everything else you need, nothing you don&apos;t.
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-balance text-center text-lg text-muted-foreground">
-          From first drawing to final warranty, every workflow works together.
-        </p>
 
         {/* Feature grid */}
         <div className="mt-16 grid gap-px bg-border/40 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

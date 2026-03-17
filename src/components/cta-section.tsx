@@ -6,17 +6,17 @@ export function CtaSection() {
         <div className="relative">
           <div className="flex flex-col items-center text-center">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
-              See Arc in action.
+              Designed for builders who lead with craft
             </h2>
             <p className="mt-5 max-w-lg text-balance text-lg text-muted-foreground">
-              A live walkthrough of the system behind your workflow, from pipeline through closeout.
+              Arc is optimized for custom builders and remodelers who prioritize quality over volume. Simple, connected project management made for the way you actually work.
             </p>
             <div className="mt-10 flex items-center gap-6">
               <a
                 href="mailto:info@arcnaples.com"
                 className="group inline-flex items-center gap-2.5 bg-foreground text-background px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90"
               >
-                Schedule a Demo
+                Book a Demo
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
                   fill="none"
@@ -26,12 +26,6 @@ export function CtaSection() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </a>
-              <a
-                href="https://app.arcnaples.com"
-                className="text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
-              >
-                Sign in
               </a>
             </div>
           </div>

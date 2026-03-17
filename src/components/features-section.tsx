@@ -14,43 +14,43 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    heading: "Pipeline",
+    heading: "Pipeline & CRM",
     description:
-      "Capture leads, log conversations, and move opportunities into estimating without switching tools. Sales and delivery stay connected from day one.",
+      "Arc includes a purpose-built CRM for construction teams - capture leads, log touchpoints, manage follow-ups, and move opportunities into estimating without leaving the platform.",
     image: "/pipeline2.png",
     imageAlt: "Arc Pipeline workspace showing funnel stages, CRM activity, and opportunities",
     aspect: "5/4",
   },
   {
-    heading: "Scheduling",
+    heading: "Schedule Intelligence",
     description:
-      "Visual Gantt schedules with milestones and dependencies keep teams aligned on what changed, what is blocked, and what happens next.",
+      "Visual Gantt scheduling with milestone tracking and benchmark management. Know exactly where every project stands and what's coming next with smart dependencies.",
     image: "/schedule.png",
     imageAlt: "Gantt chart visualization of a project schedule",
     aspect: "5/4",
   },
   {
-    heading: "Integrated Signatures",
+    heading: "Financial Management",
     description:
-      "Send contracts and change orders for signature directly in the workflow. No separate e-sign app and no broken handoffs.",
-    image: "/signature.png",
-    imageAlt: "Arc e-signing workflow showing signature block placement directly inside a PDF",
+      "Track budgets, manage invoices, collect payments, and connect change orders directly to billing.",
+    image: "/financials.png",
+    imageAlt: "Arc financials workspace showing budgets, contracts, invoicing, and payables",
     aspect: "5/4",
   },
   {
-    heading: "Stakeholder Portals",
+    heading: "Client & Vendor Portals",
     description:
-      "Give clients and trade partners clear portals for updates, approvals, files, invoicing, and communication in one place.",
+      "Give clients and vendors their own dedicated views. Clients can follow the schedule, review and pay invoices, approve change orders, message the project team, and submit punch list items. Vendors get a tailored portal to coordinate on what they need, when they need it.",
     image: "/client-portal.png",
     imageAlt: "Arc client and subcontractor portals showing project updates, approvals, and communication",
     aspect: "5/4",
   },
   {
-    heading: "Financials",
+    heading: "Integrated E-Signing",
     description:
-      "Track budgets, contracts, retainage, draws, invoicing, and payables in one source of truth with QuickBooks sync built in.",
-    image: "/financials.png",
-    imageAlt: "Arc financials workspace showing budgets, contracts, invoicing, and payables",
+      "Contract execution and change order signing are built directly into Arc. No separate account or switching between tools, so every signature lives alongside the project it belongs to.",
+    image: "/signature.png",
+    imageAlt: "Arc e-signing workflow showing signature block placement directly inside a PDF",
     aspect: "5/4",
   },
 ]
@@ -67,7 +67,7 @@ export function FeaturesSection() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-balance text-center text-3xl font-semibold tracking-tight text-foreground md:text-5xl"
         >
-          Built for every stage of the build
+          One place for the full build lifecycle.
         </motion.h2>
 
         {/* Feature cards */}
