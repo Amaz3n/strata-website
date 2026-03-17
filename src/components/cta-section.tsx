@@ -14,11 +14,11 @@ export function CtaSection() {
             <div className="mt-10 flex items-center gap-6">
               <a
                 href="mailto:info@arcnaples.com"
-                className="group inline-flex items-center gap-2.5 bg-foreground text-background px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90"
+                className="btn-cta btn-cta-light group inline-flex items-center gap-2.5 bg-foreground text-background px-6 py-3 text-sm font-medium transition-opacity hover:opacity-90"
               >
                 Book a Demo
                 <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                  className="btn-cta-icon w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}

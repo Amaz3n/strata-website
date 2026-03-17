@@ -143,29 +143,18 @@ export function SiteHeader() {
             >
               <Link
                 href="https://app.arcnaples.com"
-                className="group relative inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg overflow-hidden bg-arc-sky-blue text-white"
+                className="btn-cta group relative inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg overflow-hidden bg-arc-sky-blue text-white shadow-[0_8px_24px_-16px_rgba(47,111,237,0.9)] hover:shadow-[0_14px_30px_-18px_rgba(47,111,237,0.95)]"
               >
-                {/* Shimmer effect */}
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                />
-
                 <span className="relative z-10">Log in</span>
-                <motion.svg
-                  className="relative z-10 w-4 h-4"
+                <svg
+                  className="btn-cta-icon relative z-10 w-4 h-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 3 }}
-                  transition={{ duration: 0.2 }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </motion.svg>
+                </svg>
               </Link>
             </motion.div>
 
