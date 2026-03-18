@@ -652,3 +652,29 @@ img[data-loading="true"] {
   color: rgba(255, 255, 255, 0.3);
   font-family: monospace;
 }
+
+/* Default feature blur intensity */
+:root {
+  --feature-heading-blur: 10px;
+  --feature-body-blur: 8px;
+}
+
+/* Safari/WebKit-specific compositor tuning */
+html.is-safari {
+  --feature-heading-blur: 6px;
+  --feature-body-blur: 4px;
+}
+
+html.is-safari .safari-feature-glow {
+  filter: blur(18px);
+}
+
+html.is-safari .safari-header-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+html.is-safari .safari-hero-glass {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}

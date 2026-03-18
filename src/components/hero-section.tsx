@@ -40,7 +40,7 @@ export function HeroSection() {
         <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-white/20 via-white/5 to-transparent blur-xl animate-glow-pulse" />
 
         {/* Image container with shine effect */}
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-white/5 bg-black/50 backdrop-blur-sm">
+        <div className="safari-hero-glass relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-white/5 bg-black/50 backdrop-blur-sm">
           {/* Shine overlay */}
           <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
             <div className="absolute -inset-full w-[200%] h-[200%] animate-shine bg-gradient-to-r from-transparent via-white/8 to-transparent" />
@@ -50,10 +50,12 @@ export function HeroSection() {
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent z-10" />
 
           <Image
-            src="/controltower.png"
+            src="/controltower.webp"
             alt="Arc interface showing unified construction operations"
             width={1920}
             height={1080}
+            sizes="(min-width: 1536px) 1280px, (min-width: 1024px) 90vw, 100vw"
+            quality={85}
             className="w-full relative"
             priority
           />

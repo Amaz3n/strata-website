@@ -10,10 +10,11 @@ import { ContactPopover } from "./contact-dialog"
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { scrollY } = useScroll()
+  const { scrollY, scrollYProgress } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50)
+    const nextIsScrolled = latest > 50
+    setIsScrolled((prev) => (prev === nextIsScrolled ? prev : nextIsScrolled))
   })
 
   // Prevent body scroll when mobile menu is open
@@ -34,7 +35,7 @@ export function SiteHeader() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 bg-[linear-gradient(180deg,rgba(255,255,255,0.28)_0%,rgba(255,255,255,0.08)_100%)] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_100%)] bg-background/62 supports-[backdrop-filter]:backdrop-blur-2xl border-b border-white/20 dark:border-white/10 shadow-[0_8px_30px_rgba(15,23,42,0.18)] transition-all duration-500"
+        className="safari-header-glass fixed top-0 left-0 right-0 z-50 bg-[linear-gradient(180deg,rgba(255,255,255,0.28)_0%,rgba(255,255,255,0.08)_100%)] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_100%)] bg-background/62 supports-[backdrop-filter]:backdrop-blur-2xl border-b border-white/20 dark:border-white/10 shadow-[0_8px_30px_rgba(15,23,42,0.18)] transition-all duration-500"
       >
         {/* Animated gradient line at top */}
         <motion.div
@@ -191,7 +192,7 @@ export function SiteHeader() {
         <motion.div
           className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-arc-ink-blue via-arc-sky-blue to-arc-ink-blue"
           style={{
-            scaleX: useScroll().scrollYProgress,
+            scaleX: scrollYProgress,
             transformOrigin: "left",
           }}
         />
