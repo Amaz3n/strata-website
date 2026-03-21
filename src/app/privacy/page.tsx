@@ -1,6 +1,18 @@
-"use client";
+import type { Metadata } from "next";
 
 import AnimatedSection from "@/components/AnimatedSection";
+import { siteConfig } from "@/lib/site";
+
+const lastUpdated = "March 20, 2026";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read Arc's privacy policy to understand what information we collect and how we use and protect it.",
+  alternates: {
+    canonical: `${siteConfig.url}/privacy`,
+  },
+};
 
 export default function PrivacyPage() {
   return (
@@ -11,7 +23,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-muted-foreground mb-12">
-            Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            Last updated: {lastUpdated}
           </p>
         </AnimatedSection>
 
@@ -20,7 +32,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">1. Introduction</h2>
               <p>
-                Welcome to Arc ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice or our practices with regard to your personal information, please contact us.
+                Welcome to Arc (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice or our practices with regard to your personal information, please contact us.
               </p>
             </section>
 
