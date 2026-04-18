@@ -39,3 +39,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/public/CleanShot 2026-03-05 at 22.24.30@2x.png
