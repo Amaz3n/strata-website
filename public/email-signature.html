@@ -1,45 +1,212 @@
-<!--
-  Arc email signature
-  The logo URL points to /logo-email.png, which should be deployed with the site.
--->
-<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;max-width:620px;border-collapse:collapse;font-family:Montserrat,Segoe UI,Helvetica,Arial,sans-serif;color:#243342;line-height:1.35;mso-line-height-rule:exactly;">
-  <tr>
-    <td style="padding:0;">
-      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;border-top:3px solid #2F6FED;border-bottom:1px solid #D7E7FF;">
-        <tr>
-          <td width="112" valign="middle" align="center" style="width:112px;padding:16px 18px 16px 0;">
-            <a href="https://arcnaples.com" target="_blank" style="text-decoration:none;border:0;display:inline-block;">
-              <img src="https://arcnaples.com/logo-email.png" width="72" height="72" alt="Arc" style="display:block;width:72px;height:72px;border:0;outline:none;text-decoration:none;border-radius:36px;">
-            </a>
-          </td>
-          <td width="1" style="width:1px;background:#B8D7FF;font-size:1px;line-height:1px;">&nbsp;</td>
-          <td valign="middle" style="padding:16px 0 16px 20px;">
-            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;">
-              <tr>
-                <td valign="top" style="padding:0 24px 0 0;">
-                  <div style="font-size:19px;line-height:23px;font-weight:700;letter-spacing:.2px;color:#243342;white-space:nowrap;">Gabriela Zenuto</div>
-                  <div style="padding-top:2px;font-size:12px;line-height:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2F6FED;white-space:nowrap;">Co-Founder</div>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding-top:12px;">
-                  <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;">
-                    <tr>
-                      <td valign="middle" style="font-size:12px;line-height:18px;color:#243342;white-space:nowrap;">
-                        <a href="https://arcnaples.com" target="_blank" style="color:#243342;text-decoration:none;font-weight:700;">arcnaples.com</a>
-                      </td>
-                      <td width="18" align="center" style="width:18px;color:#B8D7FF;font-size:12px;line-height:18px;">/</td>
-                      <td valign="middle" style="font-size:12px;line-height:18px;color:#243342;white-space:nowrap;">
-                        <a href="tel:+12393840037" style="color:#243342;text-decoration:none;font-weight:700;">239 384 0037</a>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arc Email Signature</title>
+    <style>
+      :root {
+        --arc-blue: #2f6fed;
+        --arc-blue-light: #b8d7ff;
+        --arc-blue-pale: #d7e7ff;
+        --arc-ink: #243342;
+        --arc-muted: #6b7280;
+        --arc-bg: #f7faff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 32px 20px;
+        background: linear-gradient(180deg, #fff 0%, var(--arc-bg) 100%);
+        color: var(--arc-ink);
+        font-family: Montserrat, Segoe UI, Helvetica, Arial, sans-serif;
+      }
+      .shell {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+      .hint {
+        margin: 4px 0 0;
+        color: var(--arc-muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      button {
+        appearance: none;
+        border: 1px solid var(--arc-blue-light);
+        background: var(--arc-ink);
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 14px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: #fff;
+        color: var(--arc-ink);
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--arc-blue-pale);
+        border-radius: 18px;
+        box-shadow: 0 16px 40px rgba(36, 51, 66, 0.08);
+        padding: 28px;
+      }
+      .signature {
+        display: inline-block;
+        user-select: text;
+        -webkit-user-select: text;
+        outline: none;
+      }
+      .signature:focus {
+        box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.12);
+        border-radius: 12px;
+      }
+      .note {
+        margin-top: 16px;
+        color: var(--arc-muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .status {
+        min-height: 18px;
+        margin-top: 10px;
+        font-size: 12px;
+        color: var(--arc-blue);
+      }
+      @media (max-width: 640px) {
+        body { padding: 18px 12px; }
+        .toolbar { flex-direction: column; align-items: flex-start; }
+        .card { padding: 18px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <div class="toolbar">
+        <div>
+          <h1 class="title">Arc email signature</h1>
+          <p class="hint">Use the buttons to copy the full signature. The signature block below is editable and copy-safe.</p>
+        </div>
+        <div class="actions">
+          <button id="copyButton" type="button">Copy signature</button>
+          <button id="selectButton" class="secondary" type="button">Select block</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div id="signature" class="signature" contenteditable="true" tabindex="0" spellcheck="false">
+          <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;max-width:620px;border-collapse:collapse;font-family:Montserrat,Segoe UI,Helvetica,Arial,sans-serif;color:#243342;line-height:1.35;mso-line-height-rule:exactly;">
+            <tr>
+              <td style="padding:0;">
+                <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;border-top:3px solid #2F6FED;border-bottom:1px solid #D7E7FF;">
+                  <tr>
+                    <td width="112" valign="middle" align="center" style="width:112px;padding:16px 18px 16px 0;">
+                      <a href="https://arcnaples.com" target="_blank" style="text-decoration:none;border:0;display:inline-block;">
+                        <img src="https://arcnaples.com/logo-email.png" width="72" height="72" alt="Arc" style="display:block;width:72px;height:72px;border:0;outline:none;text-decoration:none;border-radius:36px;">
+                      </a>
+                    </td>
+                    <td width="1" style="width:1px;background:#B8D7FF;font-size:1px;line-height:1px;">&nbsp;</td>
+                    <td valign="middle" style="padding:16px 0 16px 20px;">
+                      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;">
+                        <tr>
+                          <td valign="top" style="padding:0 24px 0 0;">
+                            <div style="font-size:19px;line-height:23px;font-weight:700;letter-spacing:.2px;color:#243342;white-space:nowrap;">Gabriela Zenuto</div>
+                            <div style="padding-top:2px;font-size:12px;line-height:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2F6FED;white-space:nowrap;">Co-Founder</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding-top:12px;">
+                            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="width:100%;border-collapse:collapse;">
+                              <tr>
+                                <td valign="middle" style="font-size:12px;line-height:18px;color:#243342;white-space:nowrap;">
+                                  <a href="https://arcnaples.com" target="_blank" style="color:#243342;text-decoration:none;font-weight:700;">arcnaples.com</a>
+                                </td>
+                                <td width="18" align="center" style="width:18px;color:#B8D7FF;font-size:12px;line-height:18px;">/</td>
+                                <td valign="middle" style="font-size:12px;line-height:18px;color:#243342;white-space:nowrap;">
+                                  <a href="tel:+12393840037" style="color:#243342;text-decoration:none;font-weight:700;">239 384 0037</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="status" class="status" aria-live="polite"></div>
+        <div class="note">
+          If copy/paste still trims formatting in your mail app, click into the signature and use the app's own copy command after selecting the block.
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const signature = document.getElementById("signature")
+      const status = document.getElementById("status")
+      const copyButton = document.getElementById("copyButton")
+      const selectButton = document.getElementById("selectButton")
+
+      function selectSignature() {
+        const range = document.createRange()
+        range.selectNodeContents(signature)
+        const selection = window.getSelection()
+        selection.removeAllRanges()
+        selection.addRange(range)
+        signature.focus()
+      }
+
+      async function copySignature() {
+        try {
+          const html = signature.innerHTML.trim()
+          const text = signature.textContent.trim().replace(/\n\s+/g, "\n")
+
+          if (navigator.clipboard && window.ClipboardItem) {
+            const item = new ClipboardItem({
+              "text/html": new Blob([html], { type: "text/html" }),
+              "text/plain": new Blob([text], { type: "text/plain" }),
+            })
+            await navigator.clipboard.write([item])
+            status.textContent = "Signature HTML copied."
+            return
+          }
+
+          selectSignature()
+          const successful = document.execCommand("copy")
+          status.textContent = successful
+            ? "Signature copied as fallback."
+            : "Copy failed. Use Select block and copy manually."
+        } catch (error) {
+          status.textContent = "Copy failed. Use Select block and copy manually."
+        }
+      }
+
+      copyButton.addEventListener("click", copySignature)
+      selectButton.addEventListener("click", selectSignature)
+    </script>
+  </body>
+</html>
